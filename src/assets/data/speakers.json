@@ -61,7 +61,9 @@
   },
   {
     "id": 10,
-    "name": "Juri Strumpflohner"
+    "name": "Juri Strumpflohner",
+    "description": "Juri Strumpflohner is the Sr. Director of Developer Experience at Nx, where he helps shape the development of tools that make modern development faster and easier. With over a decade of experience, he recently focuses on JavaScript frameworks, particularly Angular, React, and Next.js. Juri is an Angular GDE and regularly shares insights through video courses on Egghead, YouTube, and his blog, juri.dev. When not coding, he enjoys martial arts and riding his OneWheel in the mountains of South Tyrol.",
+    "img": "https://images.squarespace-cdn.com/content/v1/5b7b64d52714e503eebf914c/b05dc92d-2718-437f-b990-11e2dfd1cf31/juri-strumpflohner.jpeg"
   },
   {
     "id": 11,

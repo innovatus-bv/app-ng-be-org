@@ -1,7 +1,7 @@
-import { Component, OnInit, ViewChild } from "@angular/core";
-import { Router, RouterLink } from "@angular/router";
+import { Component, computed, OnInit, ViewChild } from '@angular/core';
+import { Router } from '@angular/router';
 
-import { addIcons } from "ionicons";
+import { addIcons } from 'ionicons';
 import {
   logoFacebook,
   logoInstagram,
@@ -10,10 +10,9 @@ import {
   options,
   search,
   shareSocial,
-} from "ionicons/icons";
+} from 'ionicons/icons';
 
-import { LowerCasePipe } from "@angular/common";
-import { FormsModule } from "@angular/forms";
+import { FormsModule } from '@angular/forms';
 import {
   AlertController,
   Config,
@@ -25,12 +24,7 @@ import {
   IonFabList,
   IonHeader,
   IonIcon,
-  IonItemDivider,
-  IonItemGroup,
-  IonItemOption,
-  IonItemOptions,
   IonItemSliding,
-  IonLabel,
   IonList,
   IonListHeader,
   IonMenuButton,
@@ -43,16 +37,17 @@ import {
   LoadingController,
   ModalController,
   ToastController,
-} from "@ionic/angular/standalone";
-import { Group, Session } from "../../interfaces/conference.interfaces";
-import { ConferenceService } from "../../providers/conference.service";
-import { UserService } from "../../providers/user.service";
-import { ScheduleFilterPage } from "../schedule-filter/schedule-filter";
+} from '@ionic/angular/standalone';
+import { Group, Session } from '../../interfaces/conference.interfaces';
+import { ConferenceService } from '../../providers/conference.service';
+import { UserService } from '../../providers/user.service';
+import { ScheduleItemComponent } from '../../schedule-item/schedule-item.component';
+import { ScheduleFilterPage } from '../schedule-filter/schedule-filter';
 
 @Component({
-  selector: "page-schedule",
-  templateUrl: "schedule.html",
-  styleUrls: ["./schedule.scss"],
+  selector: 'page-schedule',
+  templateUrl: 'schedule.html',
+  styleUrls: ['./schedule.scss'],
   imports: [
     IonHeader,
     IonToolbar,
@@ -70,15 +65,8 @@ import { ScheduleFilterPage } from "../schedule-filter/schedule-filter";
     IonFabButton,
     IonFabList,
     FormsModule,
-    IonItemSliding,
-    LowerCasePipe,
-    RouterLink,
-    IonItemGroup,
-    IonItemDivider,
-    IonItemOption,
-    IonItemOptions,
-    IonLabel,
     IonMenuButton,
+    ScheduleItemComponent,
   ],
   providers: [
     ModalController,
@@ -90,17 +78,19 @@ import { ScheduleFilterPage } from "../schedule-filter/schedule-filter";
 })
 export class SchedulePage implements OnInit {
   // Gets a reference to the list element
-  @ViewChild("scheduleList", { static: true }) scheduleList: IonList;
+  @ViewChild('scheduleList', { static: true }) scheduleList: IonList;
 
   ios: boolean;
   dayIndex = 0;
-  queryText = "";
-  segment = "all";
+  queryText = '';
+  segment = 'all';
   excludeTrackNames: string[] = [];
-  shownSessions: number;
+  shownSessions = computed(() => this.talks().length);
   groups: Group[] = [];
   confDate: string;
   showSearchbar: boolean;
+
+  talks = this.confService.getTalks();
 
   constructor(
     public alertCtrl: AlertController,
@@ -127,7 +117,7 @@ export class SchedulePage implements OnInit {
   ngOnInit() {
     this.updateSchedule();
 
-    this.ios = this.config.get("mode") === "ios";
+    this.ios = this.config.get('mode') === 'ios';
   }
 
   updateSchedule() {
@@ -136,17 +126,17 @@ export class SchedulePage implements OnInit {
       this.scheduleList.closeSlidingItems();
     }
 
-    this.confService
-      .getTimeline(
-        this.dayIndex,
-        this.queryText,
-        this.excludeTrackNames,
-        this.segment
-      )
-      .subscribe((data) => {
-        this.shownSessions = data.shownSessions;
-        this.groups = data.groups;
-      });
+    // this.confService
+    //   .getTimeline(
+    //     this.dayIndex,
+    //     this.queryText,
+    //     this.excludeTrackNames,
+    //     this.segment
+    //   )
+    //   .subscribe((data) => {
+    //     this.shownSessions = data.shownSessions;
+    //     this.groups = data.groups;
+    //   });
   }
 
   async presentFilter() {
@@ -167,7 +157,7 @@ export class SchedulePage implements OnInit {
   async addFavorite(slidingItem: IonItemSliding, sessionData: Session) {
     if (this.user.hasFavorite(sessionData.name)) {
       // Prompt to remove favorite
-      this.removeFavorite(slidingItem, sessionData, "Favorite already added");
+      this.removeFavorite(slidingItem, sessionData, 'Favorite already added');
     } else {
       // Add as a favorite
       this.user.addFavorite(sessionData.name);
@@ -181,8 +171,8 @@ export class SchedulePage implements OnInit {
         duration: 3000,
         buttons: [
           {
-            text: "Close",
-            role: "cancel",
+            text: 'Close',
+            role: 'cancel',
           },
         ],
       });
@@ -199,10 +189,10 @@ export class SchedulePage implements OnInit {
   ) {
     const alert = await this.alertCtrl.create({
       header: title,
-      message: "Would you like to remove this session from your favorites?",
+      message: 'Would you like to remove this session from your favorites?',
       buttons: [
         {
-          text: "Cancel",
+          text: 'Cancel',
           handler: () => {
             // they clicked the cancel button, do not remove the session
             // close the sliding item and hide the option buttons
@@ -210,7 +200,7 @@ export class SchedulePage implements OnInit {
           },
         },
         {
-          text: "Remove",
+          text: 'Remove',
           handler: () => {
             // they want to remove this session from their favorites
             this.user.removeFavorite(sessionData.name);

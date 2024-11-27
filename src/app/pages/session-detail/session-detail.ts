@@ -58,31 +58,29 @@ export class SessionDetailPage {
   }
 
   ionViewWillEnter() {
-    this.confService.load().subscribe((data) => {
-      if (
-        data &&
-        data.schedule &&
-        data.schedule[0] &&
-        data.schedule[0].groups
-      ) {
-        const sessionId = this.route.snapshot.paramMap.get("sessionId");
-        for (const group of data.schedule[0].groups) {
-          if (group && group.sessions) {
-            for (const session of group.sessions) {
-              if (session && session.id === sessionId) {
-                this.session = session;
-
-                this.isFavorite = this.userService.hasFavorite(
-                  this.session.name
-                );
-
-                break;
-              }
-            }
-          }
-        }
-      }
-    });
+    // this.confService.load().subscribe((data) => {
+    //   if (
+    //     data &&
+    //     data.schedule &&
+    //     data.schedule[0] &&
+    //     data.schedule[0].groups
+    //   ) {
+    //     const sessionId = this.route.snapshot.paramMap.get('sessionId');
+    //     for (const group of data.schedule[0].groups) {
+    //       if (group && group.sessions) {
+    //         for (const session of group.sessions) {
+    //           if (session && session.id === sessionId) {
+    //             this.session = session;
+    //             this.isFavorite = this.userService.hasFavorite(
+    //               this.session.name
+    //             );
+    //             break;
+    //           }
+    //         }
+    //       }
+    //     }
+    //   }
+    // });
   }
 
   ionViewDidEnter() {

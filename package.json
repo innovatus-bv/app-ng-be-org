@@ -44,6 +44,7 @@
     "@types/puppeteer": "^7.0.4",
     "cordova-plugin-inappbrowser": "5.0.0",
     "core-js": "^3.6.4",
+    "date-fns": "^4.1.0",
     "rxjs": "^7.8.0",
     "sw-toolbox": "3.6.0",
     "tslib": "^2.0.0",

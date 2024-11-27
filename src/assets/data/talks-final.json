@@ -1,5 +1,41 @@
 [
   {
+    "name": "Open Doors",
+    "description": [],
+    "speakers": [],
+    "keyTakeaways": [],
+    "timeStart": "7:00 AM",
+    "timeEnd": "7:30 AM",
+    "tracks": [],
+    "type": "neutral",
+    "id": -1,
+    "extractedFrom": ""
+  },
+  {
+    "name": "Networking - Breakfast",
+    "description": [],
+    "speakers": [],
+    "keyTakeaways": [],
+    "timeStart": "7:30 AM",
+    "timeEnd": "8:40 AM",
+    "tracks": [],
+    "type": "neutral",
+    "id": -2,
+    "extractedFrom": ""
+  },
+  {
+    "name": "Opening Ceremony",
+    "description": [],
+    "speakers": [],
+    "keyTakeaways": [],
+    "timeStart": "8:40 AM",
+    "timeEnd": "9:00 AM",
+    "tracks": [],
+    "type": "neutral",
+    "id": -3,
+    "extractedFrom": ""
+  },
+  {
     "name": "Opening Keynote",
     "description": [
       "In this talk, I'll share Angular highlights over the past a couple of years and peek into the future of the framework!"
@@ -20,6 +56,7 @@
     "timeEnd": "9:25 AM",
     "tracks": [],
     "id": 0,
+    "type": "session",
     "extractedFrom": "https://ng-be.org/talks/2024/12/6/minko-gechev"
   },
   {
@@ -45,6 +82,7 @@
     "timeEnd": "10:00 AM",
     "tracks": [],
     "id": 1,
+    "type": "session",
     "extractedFrom": "https://ng-be.org/talks/2024/12/6/maria-korneeva"
   },
   {
@@ -71,7 +109,20 @@
     "timeEnd": "10:35 AM",
     "tracks": [],
     "id": 2,
+    "type": "session",
     "extractedFrom": "https://ng-be.org/talks/2024/12/6/michael-hladky"
+  },
+  {
+    "name": "Sponsor Session - Sofico",
+    "description": [],
+    "speakers": [],
+    "keyTakeaways": [],
+    "timeStart": "8:40 AM",
+    "timeEnd": "9:00 AM",
+    "tracks": [],
+    "type": "sponsor",
+    "id": -4,
+    "extractedFrom": ""
   },
   {
     "name": "Getting extremely productive with Angular forms",
@@ -98,6 +149,7 @@
     "timeEnd": "11:40 AM",
     "tracks": [],
     "id": 3,
+    "type": "session",
     "extractedFrom": "https://ng-be.org/talks/2024/12/6/brecht-billiet"
   },
   {
@@ -121,6 +173,7 @@
     "timeEnd": "12:10 PM",
     "tracks": [],
     "id": 4,
+    "type": "session",
     "extractedFrom": "https://ng-be.org/talks/2024/12/6/tanja-ulianova"
   },
   {
@@ -145,7 +198,44 @@
     "timeEnd": "12:40 PM",
     "tracks": [],
     "id": 5,
+    "type": "session",
     "extractedFrom": "https://ng-be.org/talks/2024/12/6/stefan-baumgartner"
+  },
+  {
+    "name": "Sponsor Session - Axxes",
+    "description": [],
+    "speakers": [],
+    "keyTakeaways": [],
+    "timeStart": "12:40 PM",
+    "timeEnd": "12:45 PM",
+    "tracks": [],
+    "type": "sponsor",
+    "id": -5,
+    "extractedFrom": ""
+  },
+  {
+    "name": "Networking - Lunch",
+    "description": [],
+    "speakers": [],
+    "keyTakeaways": [],
+    "timeStart": "12:45 PM",
+    "timeEnd": "2:45 PM",
+    "tracks": [],
+    "type": "neutral",
+    "id": -6,
+    "extractedFrom": ""
+  },
+  {
+    "name": "Sponsor Session - Gold 4",
+    "description": [],
+    "speakers": [],
+    "keyTakeaways": [],
+    "timeStart": "2:15 PM",
+    "timeEnd": "2:20 PM",
+    "tracks": [],
+    "type": "sponsor",
+    "id": -7,
+    "extractedFrom": ""
   },
   {
     "name": "SPAs, full-stack, micro-frontends, enterprise migrations, what the quack?",
@@ -179,6 +269,7 @@
     "timeEnd": "2:55 PM",
     "tracks": [],
     "id": 6,
+    "type": "session",
     "extractedFrom": "https://ng-be.org/talks/2024/12/6/natalia-venditto-and-igor-minar"
   },
   {
@@ -202,6 +293,7 @@
     "timeEnd": "3:25 PM",
     "tracks": [],
     "id": 7,
+    "type": "session",
     "extractedFrom": "https://ng-be.org/talks/2024/12/6/matthieu-riegler"
   },
   {
@@ -223,7 +315,32 @@
     "timeEnd": "3:55 PM",
     "tracks": [],
     "id": 8,
+    "type": "session",
     "extractedFrom": "https://ng-be.org/talks/2024/12/6/rainer-hahnekamp"
+  },
+  {
+    "name": "Sponsor Session - ARHS Group",
+    "description": [],
+    "speakers": [],
+    "keyTakeaways": [],
+    "timeStart": "3:55 PM",
+    "timeEnd": "4:00 PM",
+    "tracks": [],
+    "type": "sponsor",
+    "id": -8,
+    "extractedFrom": ""
+  },
+  {
+    "name": "Networking - Coffee Break",
+    "description": [],
+    "speakers": [],
+    "keyTakeaways": [],
+    "timeStart": "4:00 PM",
+    "timeEnd": "4:30 PM",
+    "tracks": [],
+    "type": "neutral",
+    "id": -9,
+    "extractedFrom": ""
   },
   {
     "name": "Consolidate, Enhance, Scale: End-to-End Angular Monorepo Management with Nx",
@@ -248,6 +365,7 @@
     "timeEnd": "5:00 PM",
     "tracks": [],
     "id": 9,
+    "type": "session",
     "extractedFrom": "https://ng-be.org/talks/2024/12/06/juri-strumpflohner"
   },
   {
@@ -274,6 +392,7 @@
     "timeEnd": "5:35 PM",
     "tracks": [],
     "id": 10,
+    "type": "session",
     "extractedFrom": "https://ng-be.org/talks/2024/12/6/miroslav-jonas"
   },
   {
@@ -303,6 +422,31 @@
     "timeEnd": "6:10 PM",
     "tracks": [],
     "id": 11,
+    "type": "session",
     "extractedFrom": "https://ng-be.org/talks/2024/12/6/manfred-steyer"
+  },
+  {
+    "name": "Closing Ceremony",
+    "description": [],
+    "speakers": [],
+    "keyTakeaways": [],
+    "timeStart": "6:10 PM",
+    "timeEnd": "6:20 PM",
+    "tracks": [],
+    "type": "neutral",
+    "id": -10,
+    "extractedFrom": ""
+  },
+  {
+    "name": "Networking - Drinks",
+    "description": [],
+    "speakers": [],
+    "keyTakeaways": [],
+    "timeStart": "6:20 PM",
+    "timeEnd": "7:45 PM",
+    "tracks": [],
+    "type": "neutral",
+    "id": -11,
+    "extractedFrom": ""
   }
 ]

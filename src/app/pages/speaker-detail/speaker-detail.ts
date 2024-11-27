@@ -66,17 +66,16 @@ export class SpeakerDetailPage {
   }
 
   ionViewWillEnter() {
-    this.confService.load().subscribe((data) => {
-      const speakerId = this.route.snapshot.paramMap.get("speakerId");
-      if (data && data.speakers) {
-        for (const speaker of data.speakers) {
-          if (speaker && speaker.id === speakerId) {
-            this.speaker = speaker;
-            break;
-          }
+    const speakers = this.confService.getSpeakers();
+    const speakerId = this.route.snapshot.paramMap.get("speakerId");
+    if (speakers) {
+      for (const speaker of speakers()) {
+        if (speaker && speaker.id === speakerId) {
+          this.speaker = speaker;
+          break;
         }
       }
-    });
+    }
   }
 
   openExternalUrl(url: string) {

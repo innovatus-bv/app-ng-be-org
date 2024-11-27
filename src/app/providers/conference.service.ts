@@ -1,65 +1,73 @@
 import { HttpClient } from '@angular/common/http';
-import { Injectable, inject } from '@angular/core';
-import { of } from 'rxjs';
+import { Injectable, Signal, inject } from '@angular/core';
+import { toSignal } from '@angular/core/rxjs-interop';
 import { map } from 'rxjs/operators';
 
+import { Talk } from '.';
 import {
   ConferenceData,
-  Group,
-  ScheduleDay,
   Session,
   Speaker,
 } from '../interfaces/conference.interfaces';
 import { UserService } from './user.service';
 
+const SPEAKERS_DATA_PATH = 'assets/data/speakers.json';
+const TALKS_DATA_PATH = 'assets/data/talks-final.json';
+const CONFERENCE_DATA_PATH = 'assets/data/conference.json';
 @Injectable({
   providedIn: 'root',
 })
 export class ConferenceService {
   http = inject(HttpClient);
   user = inject(UserService);
-  data: ConferenceData | null = null;
 
-  load() {
-    if (this.data) {
-      return of(this.data);
-    } else {
-      return this.http
-        .get<ConferenceData>('assets/data/data.json')
-        .pipe(map(this.processData, this));
-    }
-  }
+  talks: Signal<Talk[]>;
 
-  processData(data: ConferenceData): ConferenceData {
-    // just some good 'ol JS fun with objects and arrays
-    // build up the data by linking speakers to sessions
-    this.data = data;
+  speakers: Signal<Speaker[]>;
 
-    // loop through each day in the schedule
-    this.data.schedule.forEach((day: ScheduleDay) => {
-      // loop through each timeline group in the day
-      day.groups.forEach((group: Group) => {
-        // loop through each session in the timeline group
-        group.sessions.forEach((session: Session) => {
-          session.speakers = [];
-          if (session.speakerNames) {
-            session.speakerNames.forEach((speakerName: string) => {
-              const speaker = this.data.speakers.find(
-                (s: Speaker) => s.name === speakerName
-              );
-              if (speaker) {
-                session.speakers.push(speaker);
-                speaker.sessions = speaker.sessions || [];
-                speaker.sessions.push(session);
-              }
-            });
-          }
-        });
-      });
+  constructor() {
+    this.talks = toSignal(this.load<Talk[]>(TALKS_DATA_PATH), {
+      initialValue: [],
     });
-
-    return this.data;
+    this.speakers = toSignal(this.load<Speaker[]>(SPEAKERS_DATA_PATH), {
+      initialValue: [],
+    });
   }
+
+  load<T>(path: string) {
+    return this.http.get<T>(path);
+  }
+
+  // processData(data: ConferenceData): ConferenceData {
+  //   // just some good 'ol JS fun with objects and arrays
+  //   // build up the data by linking speakers to sessions
+  //   this.data = data;
+
+  //   // loop through each day in the schedule
+  //   this.data.schedule.forEach((day: ScheduleDay) => {
+  //     // loop through each timeline group in the day
+  //     day.groups.forEach((group: Group) => {
+  //       // loop through each session in the timeline group
+  //       group.sessions.forEach((session: Session) => {
+  //         session.speakers = [];
+  //         if (session.speakerNames) {
+  //           session.speakerNames.forEach((speakerName: string) => {
+  //             const speaker = this.data.speakers.find(
+  //               (s: Speaker) => s.name === speakerName
+  //             );
+  //             if (speaker) {
+  //               session.speakers.push(speaker);
+  //               speaker.sessions = speaker.sessions || [];
+  //               speaker.sessions.push(session);
+  //             }
+  //           });
+  //         }
+  //       });
+  //     });
+  //   });
+
+  //   return this.data;
+  // }
 
   getTimeline(
     dayIndex: number,
@@ -67,34 +75,7 @@ export class ConferenceService {
     excludeTracks: string[] = [],
     segment = 'all'
   ) {
-    return this.load().pipe(
-      map((data: ConferenceData) => {
-        const day = data.schedule[dayIndex];
-        day.shownSessions = 0;
-
-        queryText = queryText.toLowerCase().replace(/,|\.|-/g, ' ');
-        const queryWords = queryText
-          .split(' ')
-          .filter((w) => !!w.trim().length);
-
-        day.groups.forEach((group: Group) => {
-          group.hide = true;
-
-          group.sessions.forEach((session: Session) => {
-            // check if this session should show or not
-            this.filterSession(session, queryWords, excludeTracks, segment);
-
-            if (!session.hide) {
-              // if this session is not hidden then this group should show
-              group.hide = false;
-              day.shownSessions++;
-            }
-          });
-        });
-
-        return day;
-      })
-    );
+    return this.talks();
   }
 
   filterSession(
@@ -141,14 +122,16 @@ export class ConferenceService {
   }
 
   getSpeakers() {
-    return this.load().pipe(map((data: ConferenceData) => data.speakers));
+    return this.speakers;
   }
 
-  getTracks() {
-    return this.load().pipe(map((data: ConferenceData) => data.tracks));
+  getTalks() {
+    return this.talks;
   }
 
   getMap() {
-    return this.load().pipe(map((data: ConferenceData) => data.map));
+    return this.load<ConferenceData>(CONFERENCE_DATA_PATH).pipe(
+      map((data: ConferenceData) => data.map)
+    );
   }
 }

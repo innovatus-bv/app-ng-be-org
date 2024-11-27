@@ -105,11 +105,17 @@ async function scrapeTalkData() {
               (li) => li.textContent?.trim() || ""
             );
 
-            const timeStart =
+            const timeStart = (
               document.querySelector(".event-time-12hr-start")?.textContent ||
-              "";
-            const timeEnd =
-              document.querySelector(".event-time-12hr-end")?.textContent || "";
+              ""
+            )
+              .replace(" ", " ")
+              .trim();
+            const timeEnd = (
+              document.querySelector(".event-time-12hr-end")?.textContent || ""
+            )
+              .replace(" ", " ")
+              .trim();
             const tracks = [];
 
             const id = index;

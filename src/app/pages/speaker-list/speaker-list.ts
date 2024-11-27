@@ -51,8 +51,7 @@ export class SpeakerListPage {
   speakers: Speaker[] = [];
 
   ionViewDidEnter() {
-    this.confData.getSpeakers().subscribe((speakers) => {
-      this.speakers = speakers;
-    });
+    const speakers = this.confData.getSpeakers();
+    this.speakers = speakers();
   }
 }
