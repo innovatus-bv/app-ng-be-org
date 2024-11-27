@@ -1,7 +1,7 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
-import { Router, RouterLink } from '@angular/router';
+import { Component, OnInit, ViewChild } from "@angular/core";
+import { Router, RouterLink } from "@angular/router";
 
-import { addIcons } from 'ionicons';
+import { addIcons } from "ionicons";
 import {
   logoFacebook,
   logoInstagram,
@@ -10,10 +10,10 @@ import {
   options,
   search,
   shareSocial,
-} from 'ionicons/icons';
+} from "ionicons/icons";
 
-import { LowerCasePipe } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { LowerCasePipe } from "@angular/common";
+import { FormsModule } from "@angular/forms";
 import {
   AlertController,
   Config,
@@ -43,17 +43,16 @@ import {
   LoadingController,
   ModalController,
   ToastController,
-} from '@ionic/angular/standalone';
-import { Group, Session } from '../../interfaces/conference.interfaces';
-import { ConferenceService } from '../../providers/conference.service';
-import { UserService } from '../../providers/user.service';
-import { ScheduleFilterPage } from '../schedule-filter/schedule-filter';
+} from "@ionic/angular/standalone";
+import { Group, Session } from "../../interfaces/conference.interfaces";
+import { ConferenceService } from "../../providers/conference.service";
+import { UserService } from "../../providers/user.service";
+import { ScheduleFilterPage } from "../schedule-filter/schedule-filter";
 
 @Component({
-  selector: 'page-schedule',
-  standalone: true,
-  templateUrl: 'schedule.html',
-  styleUrls: ['./schedule.scss'],
+  selector: "page-schedule",
+  templateUrl: "schedule.html",
+  styleUrls: ["./schedule.scss"],
   imports: [
     IonHeader,
     IonToolbar,
@@ -70,7 +69,6 @@ import { ScheduleFilterPage } from '../schedule-filter/schedule-filter';
     IonFab,
     IonFabButton,
     IonFabList,
-    IonRouterOutlet,
     FormsModule,
     IonItemSliding,
     LowerCasePipe,
@@ -92,12 +90,12 @@ import { ScheduleFilterPage } from '../schedule-filter/schedule-filter';
 })
 export class SchedulePage implements OnInit {
   // Gets a reference to the list element
-  @ViewChild('scheduleList', { static: true }) scheduleList: IonList;
+  @ViewChild("scheduleList", { static: true }) scheduleList: IonList;
 
   ios: boolean;
   dayIndex = 0;
-  queryText = '';
-  segment = 'all';
+  queryText = "";
+  segment = "all";
   excludeTrackNames: string[] = [];
   shownSessions: number;
   groups: Group[] = [];
@@ -129,7 +127,7 @@ export class SchedulePage implements OnInit {
   ngOnInit() {
     this.updateSchedule();
 
-    this.ios = this.config.get('mode') === 'ios';
+    this.ios = this.config.get("mode") === "ios";
   }
 
   updateSchedule() {
@@ -169,7 +167,7 @@ export class SchedulePage implements OnInit {
   async addFavorite(slidingItem: IonItemSliding, sessionData: Session) {
     if (this.user.hasFavorite(sessionData.name)) {
       // Prompt to remove favorite
-      this.removeFavorite(slidingItem, sessionData, 'Favorite already added');
+      this.removeFavorite(slidingItem, sessionData, "Favorite already added");
     } else {
       // Add as a favorite
       this.user.addFavorite(sessionData.name);
@@ -183,8 +181,8 @@ export class SchedulePage implements OnInit {
         duration: 3000,
         buttons: [
           {
-            text: 'Close',
-            role: 'cancel',
+            text: "Close",
+            role: "cancel",
           },
         ],
       });
@@ -201,10 +199,10 @@ export class SchedulePage implements OnInit {
   ) {
     const alert = await this.alertCtrl.create({
       header: title,
-      message: 'Would you like to remove this session from your favorites?',
+      message: "Would you like to remove this session from your favorites?",
       buttons: [
         {
-          text: 'Cancel',
+          text: "Cancel",
           handler: () => {
             // they clicked the cancel button, do not remove the session
             // close the sliding item and hide the option buttons
@@ -212,7 +210,7 @@ export class SchedulePage implements OnInit {
           },
         },
         {
-          text: 'Remove',
+          text: "Remove",
           handler: () => {
             // they want to remove this session from their favorites
             this.user.removeFavorite(sessionData.name);

@@ -1,5 +1,5 @@
-import { Component, inject } from '@angular/core';
-import { RouterLink } from '@angular/router';
+import { Component, inject } from "@angular/core";
+import { RouterLink } from "@angular/router";
 import {
   IonAvatar,
   IonButtons,
@@ -14,19 +14,17 @@ import {
   IonLabel,
   IonList,
   IonMenuButton,
-  IonRouterOutlet,
   IonRow,
   IonTitle,
   IonToolbar,
-} from '@ionic/angular/standalone';
-import { Speaker } from '../../interfaces/conference.interfaces';
-import { ConferenceService } from '../../providers/conference.service';
+} from "@ionic/angular/standalone";
+import { Speaker } from "../../interfaces/conference.interfaces";
+import { ConferenceService } from "../../providers/conference.service";
 
 @Component({
-  selector: 'page-speaker-list',
-  templateUrl: 'speaker-list.html',
-  styleUrls: ['./speaker-list.scss'],
-  standalone: true,
+  selector: "page-speaker-list",
+  templateUrl: "speaker-list.html",
+  styleUrls: ["./speaker-list.scss"],
   imports: [
     IonHeader,
     IonToolbar,
@@ -44,7 +42,6 @@ import { ConferenceService } from '../../providers/conference.service';
     IonLabel,
     IonCardContent,
     IonList,
-    IonRouterOutlet,
     RouterLink,
   ],
 })

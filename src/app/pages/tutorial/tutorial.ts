@@ -1,7 +1,7 @@
-import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { Component } from "@angular/core";
+import { Router } from "@angular/router";
 
-import { MenuController } from '@ionic/angular';
+import { MenuController } from "@ionic/angular";
 
 import {
   IonButton,
@@ -10,16 +10,15 @@ import {
   IonHeader,
   IonIcon,
   IonToolbar,
-} from '@ionic/angular/standalone';
-import { Storage } from '@ionic/storage-angular';
-import { addIcons } from 'ionicons';
-import { arrowForward, close } from 'ionicons/icons';
+} from "@ionic/angular/standalone";
+import { Storage } from "@ionic/storage-angular";
+import { addIcons } from "ionicons";
+import { arrowForward, close } from "ionicons/icons";
 
 @Component({
-  selector: 'page-tutorial',
-  templateUrl: 'tutorial.html',
-  styleUrls: ['./tutorial.scss'],
-  standalone: true,
+  selector: "page-tutorial",
+  templateUrl: "tutorial.html",
+  styleUrls: ["./tutorial.scss"],
   imports: [IonHeader, IonToolbar, IonButtons, IonButton, IonContent, IonIcon],
 })
 export class TutorialPage {
@@ -38,14 +37,14 @@ export class TutorialPage {
 
   startApp() {
     this.router
-      .navigateByUrl('/app/tabs/schedule', { replaceUrl: true })
-      .then(() => this.storage.set('ion_did_tutorial', true));
+      .navigateByUrl("/app/tabs/schedule", { replaceUrl: true })
+      .then(() => this.storage.set("ion_did_tutorial", true));
   }
 
   ionViewWillEnter() {
-    this.storage.get('ion_did_tutorial').then((res) => {
+    this.storage.get("ion_did_tutorial").then((res) => {
       if (res === true) {
-        this.router.navigateByUrl('/app/tabs/schedule', { replaceUrl: true });
+        this.router.navigateByUrl("/app/tabs/schedule", { replaceUrl: true });
       }
     });
 

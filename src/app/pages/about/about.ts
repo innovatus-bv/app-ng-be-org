@@ -27,7 +27,6 @@ import { PopoverPage } from "../about-popover/about-popover";
   selector: "page-about",
   templateUrl: "about.html",
   styleUrls: ["./about.scss"],
-  standalone: true,
   imports: [
     NgStyle,
     FormsModule,
