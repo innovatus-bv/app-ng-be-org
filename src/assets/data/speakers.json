@@ -1,0 +1,78 @@
+[
+  {
+    "id": 0,
+    "name": "Minko Gechev",
+    "description": "Working on having fewer, better web frameworks at @ Google. Lead for Angular and leading its convergence with Wiz.",
+    "img": "https://images.squarespace-cdn.com/content/v1/5b7b64d52714e503eebf914c/ecf32a69-971e-4318-85c0-355acba27e3b/minko-gechev.jpg"
+  },
+  {
+    "id": 1,
+    "name": "Maria Korneeva",
+    "description": "Maria Korneeva is a Frontend Technology Lead and a Google Developer Expert with a focus on Angular and accessibility. With a solid background in business informatics and linguistics, she works as a freelancer developing frontend applications. Besides her career, she also enjoys speaking at tech events, and conducting workshops for web developers.",
+    "img": "https://images.squarespace-cdn.com/content/v1/5b7b64d52714e503eebf914c/2c45d242-c3f6-4b14-b52d-b0d029f2639b/maria-korneeva.png"
+  },
+  {
+    "id": 2,
+    "name": "Michael Hladky",
+    "description": "Michael Hladky is a Google Developer Expert (GDE), Microsoft MVP, Nx Champion, trainer, and consultant with a focus on Angular and RxJS. For years he has been helping companies and developers to set up scalable architectures and performant processes enabling teams to keep up with state-of-the-art development. A vibrant member of the tech community, he organizes multiple community events and workshops each year to give back.",
+    "img": "https://images.squarespace-cdn.com/content/v1/5b7b64d52714e503eebf914c/3113a190-5430-4a5e-839d-1d1baf681dd4/michael-hladky.jpeg"
+  },
+  {
+    "id": 3,
+    "name": "Brecht Billiet",
+    "description": "Brecht has been coding for over 20 years and has more than 6 years of experience in giving training and coaching companies in technologies like Angular, RxJS and software architecture. He has traveled the world helping companies on-site, giving training in Angular and kickstarting projects for them. He's the founder of Simplified Courses where he converts complexity into simplified trainings.",
+    "img": "https://images.squarespace-cdn.com/content/v1/5b7b64d52714e503eebf914c/bdf95a76-d6c1-4910-a163-c195f1056468/brecht-billiet.png"
+  },
+  {
+    "id": 4,
+    "name": "Tanja Ulianova",
+    "description": "Tanja is a software engineer with a passion for solid software architecture and smooth user experience. She loves learning and sharing knowledge. Since 2017 she is trying to make the web a more inclusive space by advocating for web a11y. Her other favorite topics are browser rendering and performance. Currently she works at flox on reproducible development environments. In her free time, Tanja goes climbing, builds things and cares for her urban garden.",
+    "img": "https://images.squarespace-cdn.com/content/v1/5b7b64d52714e503eebf914c/b801afff-8cb4-4fc1-b46f-9d2504551d9d/tanja-ulianova.jpg"
+  },
+  {
+    "id": 5,
+    "name": "Stefan Baumgartner",
+    "description": "Stefan Baumgartner is an architect and developer based in Austria. He is the author of \"TypeScript in 50 Lessons\" (Smashing Magazine, 2020) and \"The TypeScript Cookbook\" (O'Reilly, 2023).",
+    "img": "https://images.squarespace-cdn.com/content/v1/5b7b64d52714e503eebf914c/daad8ba1-6a5d-453c-9290-1a2d9c667cd5/stefan-baumgartner.jpeg"
+  },
+  {
+    "id": 6,
+    "name": "Natalia Venditto",
+    "description": "Principal Product Owner at Microsoft Azure, leading JavaScript Developer Experience and Tools",
+    "img": "https://images.squarespace-cdn.com/content/v1/5b7b64d52714e503eebf914c/cdc0ff3e-7de2-48ea-b77e-95a71d90f235/natalia_venditto+%281%29.jpg"
+  },
+  {
+    "id": 7,
+    "name": "Igor Minar",
+    "description": "I love creating great things with great people, especially developer tools, platforms and ecosystems. I'm on a mission to help build a better Web. I enjoy making the Web an awesome place for users, and a productive development platform for developers. I've co-created or contributed to some of the projects that helped make Web better, including AngularJS, Angular, KarmaJS, TypeScript, Bazel, Vite, and these days I spend my time focusing on the serverless and server-side via my work on Cloudflare Workers, web frameworks, standards, infrastructure, and tooling.",
+    "img": "https://images.squarespace-cdn.com/content/v1/5b7b64d52714e503eebf914c/255fffe6-e916-4c21-9bb8-04bfeb6eb293/igor-minar.jpg"
+  },
+  {
+    "id": 8,
+    "name": "Matthieu Riegler",
+    "description": "Matthieu is a senior software engineer from France. Member of the Angular team as an OpenSource contributor, he’s specialised in frontend technologies and collaborates actively in OpenSource. Occasional speaker at meetups and conferences, he loves to spread knowledge and technical insights.",
+    "img": "https://images.squarespace-cdn.com/content/v1/5b7b64d52714e503eebf914c/7eb9e307-b7ab-4c9e-8bfc-1a747e111bbe/matthieu-riegler.jpeg"
+  },
+  {
+    "id": 9,
+    "name": "Rainer Hahnekamp",
+    "description": "Rainer is a Google Developer Expert and a trusted collaborator on the NgRx team. He works as a trainer and consultant within the Angular Architects expert network, specializing in Angular and Spring. Rainer regularly provides in-depth training sessions and offers a weekly overview of key events in the Angular ecosystem on YouTube through ng-news.",
+    "img": "https://images.squarespace-cdn.com/content/v1/5b7b64d52714e503eebf914c/4cd8fb61-2465-44ea-8045-7ed67aa45207/rainer-hahnekamp.jpg"
+  },
+  {
+    "id": 10,
+    "name": "Juri Strumpflohner"
+  },
+  {
+    "id": 11,
+    "name": "Miroslav Jonas",
+    "description": "Miro is a developer productivity lead at Nx, helping companies build scalable and performant applications. He enjoys sharing with the community so much that he co-founded Angular Austria Association and co-organizes the Vienna JS. Father of two, husband of one. Despite the name, he is not a visual collaboration platform.",
+    "img": "https://images.squarespace-cdn.com/content/v1/5b7b64d52714e503eebf914c/f137a89d-a549-4ac3-9bbb-c7b9cdc8e70a/miroslav-jonas1.jpg"
+  },
+  {
+    "id": 12,
+    "name": "Manfred Steyer",
+    "description": "Trainer and Consultant with focus on Angular. Google Developer Expert (GDE) for Angular who writes for O'Reilly, the German Java Magazine and windows.developer. Regularly speaks at conferences.",
+    "img": "https://images.squarespace-cdn.com/content/v1/5b7b64d52714e503eebf914c/3ae4530f-0acc-4266-92a4-cc677242462f/manfred-steyer.jpeg"
+  }
+]

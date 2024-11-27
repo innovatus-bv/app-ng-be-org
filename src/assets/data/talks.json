@@ -1,0 +1,310 @@
+[
+  {
+    "name": "Opening Keynote",
+    "description": [
+      "In this talk, I'll share Angular highlights over the past a couple of years and peek into the future of the framework!"
+    ],
+    "speakers": [
+      {
+        "id": 0,
+        "name": "Minko Gechev",
+        "img": "https://images.squarespace-cdn.com/content/v1/5b7b64d52714e503eebf914c/ecf32a69-971e-4318-85c0-355acba27e3b/minko-gechev.jpg"
+      }
+    ],
+    "keyTakeaways": [
+      "Highlights from the Angular renaissance",
+      "How we got here",
+      "Where Angular is heading"
+    ],
+    "timeStart": "8:55 AM",
+    "timeEnd": "9:25 AM",
+    "tracks": [],
+    "id": 0,
+    "extractedFrom": "https://ng-be.org/talks/2024/12/6/minko-gechev"
+  },
+  {
+    "name": "Angular Accessibility Adventures: Navigating the Web for Everyone",
+    "description": [
+      "With the European Accessibility Act setting new standards, it's time to embrace accessibility as an inherent component of our development practices.",
+      "In this talk we will embark on a journey to make our Angular applications more accessible to all users. We’ll explore practical and straightforward techniques to enhance accessibility, focusing on the effective use of ARIA attributes to improve screen reader interactions, managing focus for seamless navigation, and leveraging Angular's Router to support accessibility-friendly navigation flows.",
+      "I will introduce some linting rules and incorporating testing tools to ensure your Angular applications are consistently accessible from development through deployment."
+    ],
+    "speakers": [
+      {
+        "id": 1,
+        "name": "Maria Korneeva",
+        "img": "https://images.squarespace-cdn.com/content/v1/5b7b64d52714e503eebf914c/2c45d242-c3f6-4b14-b52d-b0d029f2639b/maria-korneeva.png"
+      }
+    ],
+    "keyTakeaways": [
+      "Accessibility is for everyone",
+      "Angular has a lot of great accessibility features to consider",
+      "it’s never too late to start building accessible (Angular) apps"
+    ],
+    "timeStart": "9:30 AM",
+    "timeEnd": "10:00 AM",
+    "tracks": [],
+    "id": 1,
+    "extractedFrom": "https://ng-be.org/talks/2024/12/6/maria-korneeva"
+  },
+  {
+    "name": "Incremental Hydration in Angular",
+    "description": [
+      "I will introduce incremental hydration in 3 phases and give a good context of all the interaction pieces. After the theory sticks, I switch to live coding and will demo not only the code feature but also a set of common hydration strategies in your app.",
+      "Learn how to use the most sophisticated loading and hydration tool on the frontend market, Angular Hydration and Event Replay."
+    ],
+    "speakers": [
+      {
+        "id": 2,
+        "name": "Michael Hladky",
+        "img": "https://images.squarespace-cdn.com/content/v1/5b7b64d52714e503eebf914c/3113a190-5430-4a5e-839d-1d1baf681dd4/michael-hladky.jpeg"
+      }
+    ],
+    "keyTakeaways": [
+      "Understand which performance metrics are affected",
+      "How you can estimate the impact",
+      "Potential risks and how to avoid them",
+      "Measures of past SSR implementations and how it compares to latest improvements",
+      "The future of Angular's SSR story"
+    ],
+    "timeStart": "10:05 AM",
+    "timeEnd": "10:35 AM",
+    "tracks": [],
+    "id": 2,
+    "extractedFrom": "https://ng-be.org/talks/2024/12/6/michael-hladky"
+  },
+  {
+    "name": "Getting extremely productive with Angular forms",
+    "description": [
+      "This talk show you how to use template-driven forms in combination with ngx-vest-forms To start building typesafe forms and let angular do all the work for you",
+      "It will show you how to simplify forms with signals and how to do suite validations with vest.",
+      "At the end we will use nx generators to boost productivity even more and build forms in no-time."
+    ],
+    "speakers": [
+      {
+        "id": 3,
+        "name": "Brecht Billiet",
+        "img": "https://images.squarespace-cdn.com/content/v1/5b7b64d52714e503eebf914c/bdf95a76-d6c1-4910-a163-c195f1056468/brecht-billiet.png"
+      }
+    ],
+    "keyTakeaways": [
+      "Template-driven forms will let Angular do all the heavy lifting",
+      "Template-driven forms with Signals is a game-changer",
+      "Vest suites will allow framework agnostic form validation",
+      "ngx-vest-forms is a library I created to connect everything together",
+      "Opinionated structures open the gate to quality AI results"
+    ],
+    "timeStart": "11:15 AM",
+    "timeEnd": "11:40 AM",
+    "tracks": [],
+    "id": 3,
+    "extractedFrom": "https://ng-be.org/talks/2024/12/6/brecht-billiet"
+  },
+  {
+    "name": "Humanzing The Markup Language: Thoughtful Semantics for Better Web Experiences",
+    "description": [
+      "This talk explores the often-overlooked power of semantic HTML and its impact on accessibility, SEO, and maintainability. Through a fun and interactive session, attendees will discover how to craft meaningful web content by using the right tags for the right roles. Key takeaways emphasize that semantic HTML is more than just structure—it's a way to build a more accessible and user-friendly web. By humanizing our markup, we make the web better for all users, both human and machine."
+    ],
+    "speakers": [
+      {
+        "id": 4,
+        "name": "Tanja Ulianova",
+        "img": "https://images.squarespace-cdn.com/content/v1/5b7b64d52714e503eebf914c/b801afff-8cb4-4fc1-b46f-9d2504551d9d/tanja-ulianova.jpg"
+      }
+    ],
+    "keyTakeaways": [
+      "Semantics Matter: Semantic HTML improves accessibility, SEO, and code maintainability.",
+      "Right Tag for the Right Job: Always consider the meaning behind your markup.",
+      "HTML is More Than Structure: It’s a language that communicates the purpose of content to both people and technology."
+    ],
+    "timeStart": "11:45 AM",
+    "timeEnd": "12:10 PM",
+    "tracks": [],
+    "id": 4,
+    "extractedFrom": "https://ng-be.org/talks/2024/12/6/tanja-ulianova"
+  },
+  {
+    "name": "The TypeScript Completeness Conundrum",
+    "description": [
+      "TypeScript’s relevance in modern web development is undisputed. The tooling focus and the strong, but flexible type system help us to formalise and articulate even the strangest scenarios that JavaScript can offer. There’s just one problem: TypeScript is woefully incomplete!",
+      "In this talk, we will focus on patterns that are not that uncommon in JavaScript, but hard, sometimes even impossible to type! This includes obscure features from pre ES5 days to recent ones, like EcmaScript decorators! But hey, every programming language has its holes, we just need to find solutions on how to deal with them."
+    ],
+    "speakers": [
+      {
+        "id": 5,
+        "name": "Stefan Baumgartner",
+        "img": "https://images.squarespace-cdn.com/content/v1/5b7b64d52714e503eebf914c/daad8ba1-6a5d-453c-9290-1a2d9c667cd5/stefan-baumgartner.jpeg"
+      }
+    ],
+    "keyTakeaways": [
+      "TypeScript’s type system is incomplete and will most like always be incomplete",
+      "There are methods how we can influence certain types, but they don’t always hold",
+      "Anticipating incomplete types early on helps!"
+    ],
+    "timeStart": "12:15 PM",
+    "timeEnd": "12:40 PM",
+    "tracks": [],
+    "id": 5,
+    "extractedFrom": "https://ng-be.org/talks/2024/12/6/stefan-baumgartner"
+  },
+  {
+    "name": "SPAs, full-stack, micro-frontends, enterprise migrations, what the quack?",
+    "description": [
+      "Most of us have built an Angular SPA, some of us operate big ones in the enterprise. As SPAs in enterprise grow, they become mission critical, but also slow and fragile. This is not a great combo. Can we do better?",
+      "We often hear about SPA architecture being replaced with full-stack approaches. What the heck is the difference? Why should developer and business stakeholders care, and how will end users benefit? Is there a path to migrating my Angular SPA to hybrid rendering strategy models, without having to resort to a big bang with the consequent impact to development teams, business units and end-users?",
+      "This talk will compare the two architectures, and also introduce Web Fragments, a new micro-frontend movement that is already used in the enterprise to deliver real value."
+    ],
+    "speakers": [
+      {
+        "id": 6,
+        "name": "Natalia Venditto",
+        "img": "https://images.squarespace-cdn.com/content/v1/5b7b64d52714e503eebf914c/cdc0ff3e-7de2-48ea-b77e-95a71d90f235/natalia_venditto+%281%29.jpg"
+      },
+      {
+        "id": 7,
+        "name": "Igor Minar",
+        "img": "https://images.squarespace-cdn.com/content/v1/5b7b64d52714e503eebf914c/255fffe6-e916-4c21-9bb8-04bfeb6eb293/igor-minar.jpg"
+      }
+    ],
+    "keyTakeaways": [
+      "Understand the performance degradation in enterprise SPA applications.",
+      "Measure and monitor performance of enterprise apps via the Core Web Vitals metrics",
+      "Dive into performance impact of dynamic code loading and hydration",
+      "Learn about infrastructure requirements for full-stack web apps",
+      "Discover Web Fragments — a cutting edge technology for micro-frontend composition",
+      "Gain confidence in performing high scale, high ROI, and low risk enterprise frontend migrations",
+      "Explore developer tools and the ecosystem opportunities to build for the future"
+    ],
+    "timeStart": "2:25 PM",
+    "timeEnd": "2:55 PM",
+    "tracks": [],
+    "id": 6,
+    "extractedFrom": "https://ng-be.org/talks/2024/12/6/natalia-venditto-and-igor-minar"
+  },
+  {
+    "name": "How Signals shape a Pull-based architecture",
+    "description": [
+      "Understand how with Change Detection and Signals, your app takes advantage of a pull based architecture."
+    ],
+    "speakers": [
+      {
+        "id": 8,
+        "name": "Matthieu Riegler",
+        "img": "https://images.squarespace-cdn.com/content/v1/5b7b64d52714e503eebf914c/7eb9e307-b7ab-4c9e-8bfc-1a747e111bbe/matthieu-riegler.jpeg"
+      }
+    ],
+    "keyTakeaways": [
+      "Understand how signals interact with the framework",
+      "Understand how this will impact the way you write your apps",
+      "Appreciate why signals are so great"
+    ],
+    "timeStart": "3:00 PM",
+    "timeEnd": "3:25 PM",
+    "tracks": [],
+    "id": 7,
+    "extractedFrom": "https://ng-be.org/talks/2024/12/6/matthieu-riegler"
+  },
+  {
+    "name": "Zoneless Testing",
+    "description": [
+      "Angular is on the brink of a major evolution: going zoneless. But with this shift come new questions, particularly around handling asynchronous operations. Make no mistake—both fakeAsync and waitForAsync rely on Zone.js, which means they won’t work as expected in a zoneless world.",
+      "In this session, I’ll walk you through where we are today and explore the options we have moving forward. We’ll dive into what the Angular team is planning and what testing frameworks like Jest, Jasmine, and Vitest have to offer in this new context.",
+      "If you’re curious about what’s coming and want to ensure your tests remain robust in a zoneless environment, this session is for you."
+    ],
+    "speakers": [
+      {
+        "id": 9,
+        "name": "Rainer Hahnekamp",
+        "img": "https://images.squarespace-cdn.com/content/v1/5b7b64d52714e503eebf914c/4cd8fb61-2465-44ea-8045-7ed67aa45207/rainer-hahnekamp.jpg"
+      }
+    ],
+    "keyTakeaways": [
+      "ComponentFixture::whenStable()"
+    ],
+    "timeStart": "3:30 PM",
+    "timeEnd": "3:55 PM",
+    "tracks": [],
+    "id": 8,
+    "extractedFrom": "https://ng-be.org/talks/2024/12/6/rainer-hahnekamp"
+  },
+  {
+    "name": "Consolidate, Enhance, Scale: End-to-End Angular Monorepo Management with Nx",
+    "description": [
+      "Monorepos offer many benefits: simplified code sharing, better alignment with organizational standards, and a unified developer experience across projects. However, if you’re starting from a brownfield situation—perhaps with multiple individual repositories—moving to a monorepo can seem overwhelming, especially when dealing with multiple tech stacks. Without the right tools, this transition can slow development, increase complexity, and frustrate teams.",
+      "In this talk, we’ll dive into how Nx provides an end-to-end solution for supporting you on your monorepo journey—from its origins as an Angular extension to becoming a polyglot-capable monorepo tool. We’ll cover how you can consolidate multiple Angular projects into an Nx workspace, explore some of the latest advancements, including the nx import command, Nx Project Crystal, and discuss how to confidently scale your monorepo with ownership management, conformance, and robust CI tooling.",
+      "Join me to see how Nx can streamline your workflows, boost team productivity, and help you manage your Angular monorepo at scale.",
+      "Juri Strumpflohner is the Sr. Director of Developer Experience at Nx, where he helps shape the development of tools that make modern development faster and easier. With over a decade of experience, he recently focuses on JavaScript frameworks, particularly Angular, React, and Next.js. Juri is an Angular GDE and regularly shares insights through video courses on Egghead, YouTube, and his blog, juri.dev. When not coding, he enjoys martial arts and riding his OneWheel in the mountains of South Tyrol."
+    ],
+    "speakers": [
+      {
+        "id": 10,
+        "name": "Juri Strumpflohner"
+      }
+    ],
+    "keyTakeaways": [
+      "use `nx import` to move multiple projects into an Nx workspace",
+      "learn about Nx Project Crystal; the why and how it affects Angular projects",
+      "measures to scale a monorepo successfully"
+    ],
+    "timeStart": "4:30 PM",
+    "timeEnd": "5:00 PM",
+    "tracks": [],
+    "id": 9,
+    "extractedFrom": "https://ng-be.org/talks/2024/12/06/juri-strumpflohner"
+  },
+  {
+    "name": "Drum 'n' JS",
+    "description": [
+      "Good design practices and clean code ensure your code is scalable and performant. But what to do when they can't keep up?",
+      "In this talk, we’re cranking things up a notch by building a fully-featured drum machine in Angular with the WebAudio API. We’ll bend the rules, embrace unintuitive data structures, and sprinkle in some design anti-patterns for good measure—all in the name of peak performance. And don’t worry; I have the mind-blowing stats to prove it.",
+      "Prepare to have your coding beliefs shaken (and stirred)."
+    ],
+    "speakers": [
+      {
+        "id": 11,
+        "name": "Miroslav Jonas",
+        "img": "https://images.squarespace-cdn.com/content/v1/5b7b64d52714e503eebf914c/f137a89d-a549-4ac3-9bbb-c7b9cdc8e70a/miroslav-jonas1.jpg"
+      }
+    ],
+    "keyTakeaways": [
+      "First rule of the performance club is there are no rules",
+      "Question everything (especially the \"best practices\")",
+      "Measure as much as possible (with your specific usecase)",
+      "Coding should be fun"
+    ],
+    "timeStart": "5:05 PM",
+    "timeEnd": "5:35 PM",
+    "tracks": [],
+    "id": 10,
+    "extractedFrom": "https://ng-be.org/talks/2024/12/6/miroslav-jonas"
+  },
+  {
+    "name": "Effective Signals in Angular 19 and above: Rules and Helpers",
+    "description": [
+      "It is undisputed that Signals will shape the future of Angular. At first glance, Signals may seem very easy to use — like simple objects with getters and setters. However, you will encounter several pitfalls if you use them this way.",
+      "To avoid such situations, we discuss some effective rules of thumb and reactive helpers for using Signals.",
+      "You will be surprised by the difference these three rules and helpers can make!"
+    ],
+    "speakers": [
+      {
+        "id": 12,
+        "name": "Manfred Steyer",
+        "img": "https://images.squarespace-cdn.com/content/v1/5b7b64d52714e503eebf914c/3ae4530f-0acc-4266-92a4-cc677242462f/manfred-steyer.jpeg"
+      }
+    ],
+    "keyTakeaways": [
+      "Use compute for preventing Signal writes",
+      "Use compute for establishing a reactive data flow",
+      "Effects allow rendering stuff that CANNOT be rendered via data binding",
+      "Do not propagate state via Effects",
+      "Reactive helpers make your code safer and easier to maintain",
+      "Take care of race conditions",
+      "Stores help to streamline the reactive data flow"
+    ],
+    "timeStart": "5:40 PM",
+    "timeEnd": "6:10 PM",
+    "tracks": [],
+    "id": 11,
+    "extractedFrom": "https://ng-be.org/talks/2024/12/6/manfred-steyer"
+  }
+]

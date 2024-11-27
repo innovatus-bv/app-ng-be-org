@@ -1,6 +1,6 @@
-import { DatePipe, NgStyle } from '@angular/common';
-import { Component, inject } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { DatePipe, NgStyle } from "@angular/common";
+import { Component, inject } from "@angular/core";
+import { FormsModule } from "@angular/forms";
 import {
   IonButton,
   IonButtons,
@@ -18,15 +18,15 @@ import {
   IonText,
   IonToolbar,
   PopoverController,
-} from '@ionic/angular/standalone';
-import { addIcons } from 'ionicons';
-import { ellipsisHorizontal, ellipsisVertical } from 'ionicons/icons';
-import { PopoverPage } from '../about-popover/about-popover';
+} from "@ionic/angular/standalone";
+import { addIcons } from "ionicons";
+import { ellipsisHorizontal, ellipsisVertical } from "ionicons/icons";
+import { PopoverPage } from "../about-popover/about-popover";
 
 @Component({
-  selector: 'page-about',
-  templateUrl: 'about.html',
-  styleUrls: ['./about.scss'],
+  selector: "page-about",
+  templateUrl: "about.html",
+  styleUrls: ["./about.scss"],
   standalone: true,
   imports: [
     NgStyle,
@@ -51,12 +51,7 @@ import { PopoverPage } from '../about-popover/about-popover';
   providers: [PopoverController],
 })
 export class AboutPage {
-  location = 'madison';
-  conferenceDate = '2047-05-17';
-
-  selectOptions = {
-    header: 'Select a Location',
-  };
+  conferenceDate = "2024-12-05";
 
   private popoverCtrl = inject(PopoverController);
 
