@@ -9,8 +9,7 @@
           <ion-icon
             slot="icon-only"
             ios="ellipsis-horizontal"
-            md="ellipsis-vertical"
-          ></ion-icon>
+            md="ellipsis-vertical"></ion-icon>
         </ion-button>
       </ion-buttons>
     </ion-toolbar>
@@ -37,26 +36,11 @@
         <ion-label> Location </ion-label>
         Holiday Inn Gent
       </ion-item>
-      <ion-item button="true" id="open-date-input">
+      <ion-item>
         <ion-label> Date </ion-label>
-        <ion-text slot="end"
-          >{{ conferenceDate | date: 'mediumDate' }}</ion-text
-        >
-        <ion-popover
-          id="date-input-popover"
-          trigger="open-date-input"
-          [showBackdrop]="false"
-          side="top"
-          alignment="end"
-        >
-          <ng-template>
-            <ion-datetime
-              max="2056"
-              [(ngModel)]="conferenceDate"
-              presentation="date"
-            ></ion-datetime>
-          </ng-template>
-        </ion-popover>
+        <ion-text slot="end">
+          {{ conferenceDate | date: 'mediumDate' }}
+        </ion-text>
       </ion-item>
     </ion-list>
 
@@ -64,14 +48,13 @@
 
     <ion-list lines="none">
       <ion-item>
-        <ion-label> Wifi network </ion-label>
-        <ion-label class="ion-text-end">
-          ica{{conferenceDate | date: 'y'}}
-        </ion-label>
+        <ion-label> Wifi SSID </ion-label>
+        <ion-label class="ion-text-end"> NG-BE </ion-label>
       </ion-item>
       <ion-item>
         <ion-label> Password </ion-label>
-        <ion-label class="ion-text-end"> makegoodthings </ion-label>
+        <ion-label class="ion-text-end"> NGBEWIFI </ion-label>
+        <!-- <a href="WIFI:S:NGBE;T:WPA;P:NGBEWIFI;H:false;;">Connect</a> -->
       </ion-item>
     </ion-list>
   </div>
