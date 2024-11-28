@@ -121,23 +121,25 @@ export class AppComponent implements OnInit {
 
     this.swUpdate.versionUpdates.subscribe(async (res) => {
       console.log('res', res);
-      const toast = await this.toastCtrl.create({
-        message: 'Update available!',
-        position: 'bottom',
-        buttons: [
-          {
-            role: 'cancel',
-            text: 'Reload',
-          },
-        ],
-      });
+      if (res.type === 'VERSION_READY') {
+        const toast = await this.toastCtrl.create({
+          message: 'Update available!',
+          position: 'bottom',
+          buttons: [
+            {
+              role: 'cancel',
+              text: 'Reload',
+            },
+          ],
+        });
 
-      await toast.present();
+        await toast.present();
 
-      toast
-        .onDidDismiss()
-        .then(() => this.swUpdate.activateUpdate())
-        .then(() => window.location.reload());
+        toast
+          .onDidDismiss()
+          .then(() => this.swUpdate.activateUpdate())
+          .then(() => window.location.reload());
+      }
     });
   }
 
