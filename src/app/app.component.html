@@ -21,9 +21,20 @@
           </ion-menu-toggle>
           }
         </ion-list>
-        <!-- @if(loggedIn) {
         <ion-list lines="none">
           <ion-list-header> Account </ion-list-header>
+          <ion-item>
+            <ion-icon
+              slot="start"
+              name="moon-outline"></ion-icon>
+            <ion-toggle
+              [(ngModel)]="dark"
+              (ionChange)="toggleDarkMode()">
+              Dark Mode
+            </ion-toggle>
+          </ion-item>
+        </ion-list>
+        <!-- @if(loggedIn) {
 
           <ion-menu-toggle autoHide="false">
             <ion-item

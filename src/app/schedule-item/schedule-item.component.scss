@@ -1,6 +1,8 @@
 ion-item {
   border-radius: 4px;
   margin: 8px;
+  --color: #3e3e3e;
+  --border-style: none;
 }
 
 ion-label {
@@ -9,7 +11,7 @@ ion-label {
   align-items: center;
   padding: 0 8px 0 16px;
   margin-left: 8px;
-  border-left: 1px solid var(--ion-color-light);
+  border-left: 1px solid whitesmoke;
 }
 
 h3 {

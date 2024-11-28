@@ -1,5 +1,4 @@
 import { Component, inject } from '@angular/core';
-import { RouterLink } from '@angular/router';
 import {
   IonAvatar,
   IonButton,
@@ -42,7 +41,6 @@ import { ConferenceService } from '../../providers/conference.service';
     IonAvatar,
     IonLabel,
     IonCardContent,
-    RouterLink,
     IonButton,
     IonIcon,
   ],
