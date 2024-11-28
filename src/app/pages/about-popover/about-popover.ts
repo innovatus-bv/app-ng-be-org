@@ -8,30 +8,32 @@ import {
 } from '@ionic/angular/standalone';
 
 @Component({
-    template: `
+  template: `
     <ion-list>
       <ion-item
         button
-        (click)="close('https://ionicframework.com/getting-started')"
-      >
-        <ion-label>Learn Ionic</ion-label>
+        (click)="close('https://ng-be.org/code-of-conduct')">
+        <ion-label>Code of Conduct</ion-label>
       </ion-item>
-      <ion-item button (click)="close('https://ionicframework.com/docs/')">
-        <ion-label>Documentation</ion-label>
+      <ion-item
+        button
+        (click)="close('https://ng-be.org/rules-photo-contests')">
+        <ion-label>Photo Contest Rules</ion-label>
       </ion-item>
-      <ion-item button (click)="close('https://showcase.ionicframework.com')">
-        <ion-label>Showcase</ion-label>
+      <ion-item
+        button
+        (click)="close('https://angular-jobs.com/')">
+        <ion-label>Angular Jobs</ion-label>
       </ion-item>
-      <ion-item button (click)="close('https://github.com/ionic-team/ionic')">
-        <ion-label>GitHub Repo</ion-label>
-      </ion-item>
-      <ion-item button (click)="support()">
-        <ion-label>Support</ion-label>
+      <ion-item
+        button
+        (click)="close('https://ng-be.org/')">
+        <ion-label>Website</ion-label>
       </ion-item>
     </ion-list>
   `,
-    imports: [IonList, IonItem, IonLabel],
-    providers: [PopoverController]
+  imports: [IonList, IonItem, IonLabel],
+  providers: [PopoverController],
 })
 export class PopoverPage {
   private router = inject(Router);
