@@ -36,7 +36,6 @@
                   "type": "anyComponentStyle"
                 }
               ],
-              "buildOptimizer": true,
               "extractLicenses": true,
               "fileReplacements": [
                 {
@@ -47,7 +46,7 @@
               "namedChunks": false,
               "optimization": true,
               "outputHashing": "all",
-              "serviceWorker": "ngsw-worker.js"
+              "serviceWorker": "ngsw-config.json"
             }
           },
           "defaultConfiguration": "",

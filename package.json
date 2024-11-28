@@ -1,8 +1,8 @@
 {
-  "name": "ionic-conference-app",
-  "version": "0.0.0",
-  "description": "Ionic Conference App",
-  "author": "Ionic Team <hi@ionicframework.com>",
+  "name": "app-ng-be-org",
+  "version": "0.1.0",
+  "description": "NG-BE Conference App",
+  "author": "Mateus Carniatto <mateus.carniato@gmail.com>",
   "license": "Apache-2.0",
   "scripts": {
     "ng": "ng",
@@ -17,7 +17,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/ionic-team/ionic-conference-app.git"
+    "url": "https://github.com/innovatus-bv/app-ng-be-org.git"
   },
   "private": true,
   "dependencies": {
@@ -67,7 +67,6 @@
     "@angular/compiler-cli": "^19.0.1",
     "@angular/language-service": "^19.0.1",
     "@capacitor/cli": "4.6.3",
-    "@cypress/schematic": "^2.5.0",
     "@ionic/angular-toolkit": "6.1.0",
     "@ionic/cli": "6.19.0",
     "@ionic/storage": "^3.0.6",
@@ -76,7 +75,6 @@
     "@typescript-eslint/eslint-plugin": "^5.43.0",
     "@typescript-eslint/parser": "^5.43.0",
     "cordova-res": "0.15.4",
-    "cypress": "latest",
     "eslint": "^8.28.0",
     "jasmine-core": "~3.8.0",
     "jasmine-spec-reporter": "~5.0.0",
