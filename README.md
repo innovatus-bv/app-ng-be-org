@@ -37,6 +37,9 @@ This application serves as the official companion app for NG-BE, Belgium's premi
 - Sam Verschueren
 - Yannick Houbrix
 - Mateus Carniatto
+- Thijs D'Hulster
+- Tim Ysewyn
+- Jorciney Dias Chaveiro
 
 ### Organizers
 
