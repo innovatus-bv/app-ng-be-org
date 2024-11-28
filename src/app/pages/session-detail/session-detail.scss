@@ -81,6 +81,47 @@
   transform: scale(0);
 }
 
-h1 {
-  margin: 0;
+h1,
+h3 {
+  color: var(--ion-color-dark);
+}
+
+ion-content {
+  --color: #2f2f2f;
+}
+
+div.content {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  margin-bottom: 16px;
+}
+
+div.title {
+  flex-shrink: 1;
+}
+
+ion-avatar {
+  flex-shrink: 0;
+  img {
+    border: double 4px transparent;
+    background-image: linear-gradient(white, white),
+      conic-gradient(
+        from -30deg,
+        #0b0e10,
+        35deg,
+        #f3b41c,
+        165deg,
+        #fa2402,
+        260deg,
+        #0b0e11
+      );
+    background-origin: border-box;
+    background-clip: content-box, border-box;
+  }
+}
+
+li {
+  margin-bottom: 16px;
+  font-size: 14px;
 }

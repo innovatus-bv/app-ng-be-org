@@ -1,4 +1,5 @@
 import { Component, computed, input } from '@angular/core';
+import { RouterLink } from '@angular/router';
 import { IonAvatar, IonItem, IonLabel } from '@ionic/angular/standalone';
 import { isBefore, parse, subDays } from 'date-fns';
 import { StartTimePipe } from '../pages/speaker-detail/startTime.pipe';
@@ -7,8 +8,9 @@ import { Talk } from '../providers';
 @Component({
   selector: 'app-schedule-item',
   standalone: true,
-  imports: [IonItem, IonLabel, IonAvatar, StartTimePipe],
+  imports: [IonItem, IonLabel, IonAvatar, StartTimePipe, RouterLink],
   template: `<ion-item
+    [routerLink]="['/app/tabs/schedule/session', talk().id]"
     [style]="{ '--background': type(), opacity: isPast() ? 0.6 : 1 }">
     <div>{{ talk().timeStart | startTime }}</div>
     <ion-label>

@@ -1,6 +1,7 @@
-import { Component, inject } from "@angular/core";
-import { ActivatedRoute } from "@angular/router";
+import { Component, computed, inject } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import {
+  IonAvatar,
   IonBackButton,
   IonButton,
   IonButtons,
@@ -12,24 +13,23 @@ import {
   IonList,
   IonText,
   IonToolbar,
-} from "@ionic/angular/standalone";
-import { addIcons } from "ionicons";
+} from '@ionic/angular/standalone';
+import { addIcons } from 'ionicons';
 import {
   cloudDownload,
   share,
   shareOutline,
   star,
   starOutline,
-} from "ionicons/icons";
+} from 'ionicons/icons';
 
-import { Session } from "../../interfaces/conference.interfaces";
-import { ConferenceService } from "../../providers/conference.service";
-import { UserService } from "../../providers/user.service";
+import { ConferenceService } from '../../providers/conference.service';
+import { UserService } from '../../providers/user.service';
 
 @Component({
-  selector: "page-session-detail",
-  styleUrls: ["./session-detail.scss"],
-  templateUrl: "session-detail.html",
+  selector: 'page-session-detail',
+  styleUrls: ['./session-detail.scss'],
+  templateUrl: 'session-detail.html',
   imports: [
     IonHeader,
     IonToolbar,
@@ -42,6 +42,7 @@ import { UserService } from "../../providers/user.service";
     IonItem,
     IonLabel,
     IonText,
+    IonAvatar,
   ],
 })
 export class SessionDetailPage {
@@ -49,9 +50,14 @@ export class SessionDetailPage {
   private userService = inject(UserService);
   private route = inject(ActivatedRoute);
 
-  session: Session;
+  session = computed(() => {
+    const talks = this.confService.getTalks();
+    return talks().find(
+      (talk) => talk.id === +this.route.snapshot.paramMap.get('sessionId')!
+    );
+  });
   isFavorite = false;
-  defaultHref = "";
+  defaultHref = '';
 
   constructor() {
     addIcons({ shareOutline, starOutline, star, cloudDownload, share });
@@ -88,7 +94,7 @@ export class SessionDetailPage {
   }
 
   sessionClick(item: string) {
-    console.log("Clicked", item);
+    console.log('Clicked', item);
   }
 
   toggleFavorite() {
@@ -103,6 +109,6 @@ export class SessionDetailPage {
   }
 
   shareSession() {
-    console.log("Clicked share session");
+    console.log('Clicked share session');
   }
 }

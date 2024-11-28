@@ -4,57 +4,90 @@
       <ion-back-button [defaultHref]="defaultHref"></ion-back-button>
     </ion-buttons>
     <ion-buttons slot="end">
-      <ion-button (click)="toggleFavorite()">
+      <!-- <ion-button (click)="toggleFavorite()">
         @if (!isFavorite) {
-        <ion-icon slot="icon-only" name="star-outline"></ion-icon>
+        <ion-icon
+          slot="icon-only"
+          name="star-outline"></ion-icon>
         } @if (isFavorite) {
-        <ion-icon slot="icon-only" name="star"></ion-icon>
+        <ion-icon
+          slot="icon-only"
+          name="star"></ion-icon>
         }
-      </ion-button>
-      <ion-button (click)="shareSession()">
-        <ion-icon slot="icon-only" name="share"></ion-icon>
-      </ion-button>
+      </ion-button> -->
+      <!-- <ion-button (click)="shareSession()">
+        <ion-icon
+          slot="icon-only"
+          name="share"></ion-icon>
+      </ion-button> -->
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  @if (session) {
+  @if (session()) {
   <div class="ion-padding">
-    <h1>{{session.name}}</h1>
-    @for (track of session?.tracks; track $index) {
-    <span [class]="'session-track-'+track.toLowerCase()">{{track}}</span>
-    }
-    <p>{{session.description}}</p>
-    <ion-text color="medium">
-      {{session.timeStart}} &ndash; {{session.timeEnd}}
-      <br />
-      {{session.location}}
-    </ion-text>
+    @let talk = session();
+    <div class="content">
+      <div class="title">
+        <h1>{{talk.name}}</h1>
+        <ion-text color="medium">
+          {{talk.timeStart}} &ndash; {{talk.timeEnd}}
+          <br />
+          {{talk.location}}
+        </ion-text>
+      </div>
+      <ion-avatar>
+        @for (speaker of talk.speakers; track speaker.id) {
+        <img [src]="speaker.img" />
+        }
+      </ion-avatar>
+    </div>
+
+    @if (talk.description.length) { @for (desc of talk.description; track desc)
+    {
+    <p>{{desc}}</p>
+    } }
+
+    <h3>Key Takeaways</h3>
+    <ul>
+      @for (takeaway of talk.keyTakeaways; track takeaway) {
+      <li>{{takeaway}}</li>
+      }
+    </ul>
   </div>
   }
 
-  <ion-list>
-    <ion-item (click)="sessionClick('watch')" button>
+  <!-- <ion-list>
+    <ion-item
+      (click)="sessionClick('watch')"
+      button>
       <ion-label color="primary">Watch</ion-label>
     </ion-item>
-    <ion-item (click)="sessionClick('add to calendar')" button>
+    <ion-item
+      (click)="sessionClick('add to calendar')"
+      button>
       <ion-label color="primary">Add to Calendar</ion-label>
     </ion-item>
-    <ion-item (click)="sessionClick('mark as unwatched')" button>
+    <ion-item
+      (click)="sessionClick('mark as unwatched')"
+      button>
       <ion-label color="primary">Mark as Unwatched</ion-label>
     </ion-item>
-    <ion-item (click)="sessionClick('download video')" button>
+    <ion-item
+      (click)="sessionClick('download video')"
+      button>
       <ion-label color="primary">Download Video</ion-label>
       <ion-icon
         slot="end"
         color="primary"
         size="small"
-        name="cloud-download"
-      ></ion-icon>
+        name="cloud-download"></ion-icon>
     </ion-item>
-    <ion-item (click)="sessionClick('leave feedback')" button>
+    <ion-item
+      (click)="sessionClick('leave feedback')"
+      button>
       <ion-label color="primary">Leave Feedback</ion-label>
     </ion-item>
-  </ion-list>
+  </ion-list> -->
 </ion-content>
