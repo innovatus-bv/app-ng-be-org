@@ -42,6 +42,7 @@ import { PopoverPage } from '../about-popover/about-popover';
 })
 export class AboutPage {
   conferenceDate = '2024-12-05';
+  workshopDate = '2024-12-04';
 
   private popoverCtrl = inject(PopoverController);
 

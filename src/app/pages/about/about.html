@@ -37,7 +37,13 @@
         Holiday Inn Gent
       </ion-item>
       <ion-item>
-        <ion-label> Date </ion-label>
+        <ion-label> Workshop Day </ion-label>
+        <ion-text slot="end">
+          {{ workshopDate | date: 'mediumDate' }}
+        </ion-text>
+      </ion-item>
+      <ion-item>
+        <ion-label> Conference Day </ion-label>
         <ion-text slot="end">
           {{ conferenceDate | date: 'mediumDate' }}
         </ion-text>
