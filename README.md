@@ -1,88 +1,64 @@
-# Ionic Angular Conference Application
+# NG-BE Conference App
 
-This application is purely a kitchen-sink demo of the Ionic Framework and Angular.
+A modern Angular-based mobile and web application for the Belgian Angular Conference (NG-BE), providing attendees with essential conference information, schedules, and interactive features.
 
-**There is not an actual Ionic Conference at this time.** This project is just to show off Ionic components in a real-world application. Please go through the steps in [CONTRIBUTING](https://github.com/ionic-team/ionic-conference-app/blob/main/.github/CONTRIBUTING.md) before submitting an issue.
+## Overview
 
-## React and Vue Versions
+This application serves as the official companion app for NG-BE, Belgium's premier Angular conference. Built with Angular and Ionic, it offers a seamless experience across both mobile and web platforms.
 
-We've built versions of this Conference app in React and Vue for developers that would prefer to use one of those framework options:
+## Features
 
-[https://github.com/ionic-team/ionic-react-conference-app](https://github.com/ionic-team/ionic-react-conference-app)
+- 📅 Conference schedule with detailed session information
+- 👥 Speaker profiles and presentations
+- 🗺️ Venue information and navigation
+- 📱 Cross-platform support (iOS, Android, Web)
+- 🌐 Offline support
 
-[https://github.com/ionic-team/ionic-vue-conference-app](https://github.com/ionic-team/ionic-vue-conference-app)
+## Technology Stack
 
-## Table of Contents
-- [Getting Started](#getting-started)
-- [Contributing](#contributing)
-- [App Preview](#app-preview)
-- [Deploying](#deploying)
-  - [Progressive Web App](#progressive-web-app)
-  - [Android](#android)
-  - [iOS](#ios)
-
+- Angular v19
+- Ionic Framework
+- TypeScript
+- SCSS
+- Capacitor for native functionality
+- Angular Signals for state management
 
 ## Getting Started
 
-* [Download the installer](https://nodejs.org/) for Node LTS.
-* Install the ionic CLI globally: `npm install -g ionic`
-* Clone this repository: `git clone https://github.com/ionic-team/ionic-conference-app.git`.
-* Run `npm install` from the project root.
-* Run `ionic serve` in a terminal from the project root.
-* Profit. :tada:
+1. Clone the repository
 
-_Note: See [How to Prevent Permissions Errors](https://docs.npmjs.com/getting-started/fixing-npm-permissions) if you are running into issues when trying to install packages globally._
+## Team
+
+### Core Team Members
+
+- Björn De Craemer
+- Ksenia Karelskaya
+- Maarten Tibau
+- Sam Verschueren
+- Yannick Houbrix
+- Mateus Carniatto
+
+### Organizers
+
+- Jurgen Van de Moere
+- Sam Vloeberghs
 
 ## Contributing
 
-See [CONTRIBUTING.md](https://github.com/ionic-team/ionic-conference-app/blob/main/.github/CONTRIBUTING.md) :tada::+1:
+We welcome contributions! Please read our contributing guidelines before submitting pull requests.
 
+## Acknowledgments
 
-## App Preview
+This project is based on the [Ionic Conference Application](https://github.com/ionic-team/ionic-conference-app) template, customized and enhanced for NG-BE's specific needs.
 
-### [Menu](https://github.com/ionic-team/ionic-conference-app/blob/main/src/app/app.component.html)
+## Conference Information
 
-| Material Design  | iOS  |
-| -----------------| -----|
-| ![Android Menu](/resources/screenshots/android-menu.png) | ![iOS Menu](/resources/screenshots/ios-menu.png) |
+NG-BE is held annually in Ghent, Belgium. For more information about the conference, visit [ng-be.org](https://ng-be.org).
 
+## License
 
-### [Schedule Page](https://github.com/ionic-team/ionic-conference-app/blob/main/src/app/pages/schedule/schedule.html)
+This project is licensed under the MIT License - see the LICENSE file for details.
 
-| Material Design  | iOS  |
-| -----------------| -----|
-| ![Android Schedule](/resources/screenshots/android-schedule.png) | ![iOS Schedule](/resources/screenshots/ios-schedule.png) |
+---
 
-### [Speakers Page](https://github.com/ionic-team/ionic-conference-app/blob/main/src/app/pages/speaker-list/speaker-list.html)
-
-| Material Design  | iOS  |
-| -----------------| -----|
-| ![Android Speakers](/resources/screenshots/android-speakers.png) | ![iOS Speakers](/resources/screenshots/ios-speakers.png) |
-
-### [Speaker Detail Page](https://github.com/ionic-team/ionic-conference-app/blob/main/src/app/pages/speaker-detail/speaker-detail.html)
-
-| Material Design  | iOS  |
-| -----------------| -----|
-| ![Android Speaker Detail](/resources/screenshots/android-speaker-detail.png) | ![iOS Speaker Detail](/resources/screenshots/ios-speaker-detail.png) |
-
-### [About Page](https://github.com/ionic-team/ionic-conference-app/blob/main/src/app/pages/about/about.html)
-
-| Material Design  | iOS  |
-| -----------------| -----|
-| ![Android About](/resources/screenshots/android-about.png) | ![iOS About](/resources/screenshots/ios-about.png) |
-
-
-## Deploying
-
-### Progressive Web App
-
-1. Run `ionic build --prod`
-2. Push the `www` folder to your hosting service
-
-### Android
-
-1. Run `ionic cordova run android --prod`
-
-### iOS
-
-1. Run `ionic cordova run ios --prod`
+Built with 🖤💛❤️ for the Angular community in Belgium
