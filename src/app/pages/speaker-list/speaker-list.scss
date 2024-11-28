@@ -11,14 +11,50 @@ ion-col:not(:last-of-type) .speaker-card {
   margin-bottom: 0;
 }
 
+ion-item {
+  --background: conic-gradient(
+    from -30deg at 5%,
+    #0b0e10,
+    105deg,
+    #f3b41c,
+    145deg,
+    #fa2402,
+    290deg,
+    #0b0e11
+  );
+}
+
+ion-avatar {
+  width: 70px;
+  height: 70px;
+  // img {
+  //   width: 90px;
+  //   height: 90px;
+  //   border: double 6px transparent;
+  //   background-image: linear-gradient(white, white),
+  //     conic-gradient(
+  //       from -30deg,
+  //       #0b0e10,
+  //       35deg,
+  //       #f3b41c,
+  //       165deg,
+  //       #fa2402,
+  //       260deg,
+  //       #0b0e11
+  //     );
+  //   background-origin: border-box;
+  //   background-clip: content-box, border-box;
+  // }
+}
+
 .speaker-card .speaker-item {
   --min-height: 85px;
 }
 
 .speaker-card .speaker-item h2 {
   font-size: 18px;
-  font-weight: 500;
-
+  font-weight: 800;
+  color: white;
   letter-spacing: 0.02em;
 }
 
@@ -35,7 +71,7 @@ ion-col:not(:last-of-type) .speaker-card {
 .speaker-card ion-card-content {
   flex: 1 1 auto;
 
-  padding: 0;
+  padding: 12px;
 }
 
 .ios ion-list {
@@ -46,4 +82,14 @@ ion-col:not(:last-of-type) .speaker-card {
   padding: 0;
 
   border-top: 1px solid var(--ion-color-step-150, #d7d8da);
+}
+
+.footer {
+  display: flex;
+  justify-content: space-around;
+  width: 80%;
+  margin: 0 auto;
+  ion-button {
+    text-align: center;
+  }
 }

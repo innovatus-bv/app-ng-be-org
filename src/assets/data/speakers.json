@@ -75,6 +75,11 @@
     "id": 12,
     "name": "Manfred Steyer",
     "description": "Trainer and Consultant with focus on Angular. Google Developer Expert (GDE) for Angular who writes for O'Reilly, the German Java Magazine and windows.developer. Regularly speaks at conferences.",
-    "img": "https://images.squarespace-cdn.com/content/v1/5b7b64d52714e503eebf914c/3ae4530f-0acc-4266-92a4-cc677242462f/manfred-steyer.jpeg"
+    "img": "https://images.squarespace-cdn.com/content/v1/5b7b64d52714e503eebf914c/3ae4530f-0acc-4266-92a4-cc677242462f/manfred-steyer.jpeg",
+    "social": {
+      "x": "https://x.com/manfredsteyer",
+      "linkedin": "https://www.linkedin.com/in/manfred-steyer-84645821",
+      "website": "https://www.angulararchitects.io"
+    }
   }
 ]

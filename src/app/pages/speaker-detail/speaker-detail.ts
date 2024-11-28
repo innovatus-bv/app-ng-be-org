@@ -1,9 +1,10 @@
-import { NgOptimizedImage } from "@angular/common";
-import { Component, inject } from "@angular/core";
-import { ActivatedRoute } from "@angular/router";
-import { InAppBrowser } from "@awesome-cordova-plugins/in-app-browser/ngx";
+import { NgOptimizedImage } from '@angular/common';
+import { Component, computed, inject } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { InAppBrowser } from '@awesome-cordova-plugins/in-app-browser/ngx';
 import {
   ActionSheetController,
+  Config,
   IonBackButton,
   IonButton,
   IonButtons,
@@ -13,24 +14,25 @@ import {
   IonIcon,
   IonLabel,
   IonToolbar,
-} from "@ionic/angular/standalone";
-import { addIcons } from "ionicons";
+} from '@ionic/angular/standalone';
+import { addIcons } from 'ionicons';
 import {
   callOutline,
   callSharp,
+  globe,
   logoGithub,
-  logoInstagram,
-  logoTwitter,
+  logoLinkedin,
+  logoX,
   shareOutline,
   shareSharp,
-} from "ionicons/icons";
-import { Speaker } from "../../interfaces/conference.interfaces";
-import { ConferenceService } from "../../providers/conference.service";
+} from 'ionicons/icons';
+import { Speaker } from '../../providers';
+import { ConferenceService } from '../../providers/conference.service';
 
 @Component({
-  selector: "page-speaker-detail",
-  templateUrl: "speaker-detail.html",
-  styleUrls: ["./speaker-detail.scss"],
+  selector: 'page-speaker-detail',
+  templateUrl: 'speaker-detail.html',
+  styleUrls: ['./speaker-detail.scss'],
   imports: [
     IonContent,
     IonHeader,
@@ -46,7 +48,15 @@ import { ConferenceService } from "../../providers/conference.service";
   providers: [InAppBrowser, ActionSheetController],
 })
 export class SpeakerDetailPage {
-  speaker: Speaker;
+  config = inject(Config);
+  speaker = computed(() =>
+    this.confService
+      .speakers()
+      .find(
+        (speaker) =>
+          speaker.id === +this.route.snapshot.paramMap.get('speakerId')
+      )
+  );
 
   private confService = inject(ConferenceService);
   private route = inject(ActivatedRoute);
@@ -59,55 +69,39 @@ export class SpeakerDetailPage {
       callSharp,
       shareOutline,
       shareSharp,
-      logoTwitter,
       logoGithub,
-      logoInstagram,
+      logoX,
+      logoLinkedin,
+      globe,
     });
   }
 
-  ionViewWillEnter() {
-    const speakers = this.confService.getSpeakers();
-    const speakerId = this.route.snapshot.paramMap.get("speakerId");
-    if (speakers) {
-      for (const speaker of speakers()) {
-        if (speaker && speaker.id === speakerId) {
-          this.speaker = speaker;
-          break;
-        }
-      }
-    }
-  }
-
   openExternalUrl(url: string) {
-    this.inAppBrowser.create(url, "_blank");
+    this.inAppBrowser.create(url, '_blank');
   }
 
   async openSpeakerShare(speaker: any) {
     const actionSheet = await this.actionSheetCtrl.create({
-      header: "Share " + speaker.name,
+      header: 'Share ' + speaker.name,
       buttons: [
         {
-          text: "Copy Link",
+          text: 'Copy Link',
           handler: () => {
-            console.log(
-              "Copy link clicked on https://twitter.com/" + speaker.twitter
-            );
+            console.log('Copy link clicked on ' + speaker.social.x);
             if (
               (window as any).cordova &&
               (window as any).cordova.plugins.clipboard
             ) {
-              (window as any).cordova.plugins.clipboard.copy(
-                "https://twitter.com/" + speaker.twitter
-              );
+              (window as any).cordova.plugins.clipboard.copy(speaker.social.x);
             }
           },
         },
         {
-          text: "Share via ...",
+          text: 'Share via ...',
         },
         {
-          text: "Cancel",
-          role: "cancel",
+          text: 'Cancel',
+          role: 'cancel',
         },
       ],
     });
@@ -116,28 +110,28 @@ export class SpeakerDetailPage {
   }
 
   async openContact(speaker: Speaker) {
-    const mode = "ios"; // this.config.get('mode');
+    const mode = this.config.get('mode');
 
     const actionSheet = await this.actionSheetCtrl.create({
-      header: "Contact " + speaker.name,
+      header: 'Contact ' + speaker.name,
       buttons: [
+        // {
+        //   text: `Email ( ${speaker.email} )`,
+        //   icon: mode !== 'ios' ? 'mail' : null,
+        //   handler: () => {
+        //     window.open('mailto:' + speaker.email);
+        //   },
+        // },
+        // {
+        //   text: `Call ( ${speaker.phone} )`,
+        //   icon: mode !== 'ios' ? 'call' : null,
+        //   handler: () => {
+        //     window.open('tel:' + speaker.phone);
+        //   },
+        // },
         {
-          text: `Email ( ${speaker.email} )`,
-          icon: mode !== "ios" ? "mail" : null,
-          handler: () => {
-            window.open("mailto:" + speaker.email);
-          },
-        },
-        {
-          text: `Call ( ${speaker.phone} )`,
-          icon: mode !== "ios" ? "call" : null,
-          handler: () => {
-            window.open("tel:" + speaker.phone);
-          },
-        },
-        {
-          text: "Cancel",
-          role: "cancel",
+          text: 'Cancel',
+          role: 'cancel',
         },
       ],
     });

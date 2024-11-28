@@ -1,3 +1,8 @@
+export interface TalkShort {
+  id: number;
+  name: string;
+}
+
 export interface Talk {
   name: string;
   description: string[];
@@ -21,6 +26,13 @@ export interface SpeakerShort {
 export interface Speaker {
   id: number;
   name: string;
-  description?: string;
-  img?: string;
+  description: string;
+  img: string;
+  talks: TalkShort[];
+  social: {
+    x: string;
+    linkedin: string;
+    github: string;
+    website: string;
+  };
 }

@@ -34,7 +34,7 @@ export const TABS_ROUTES: Routes = [
               ),
           },
           {
-            path: 'session/:sessionId',
+            path: 'talk/:talkId',
             loadComponent: () =>
               import('../session-detail/session-detail').then(
                 (m) => m.SessionDetailPage

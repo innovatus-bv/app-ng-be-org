@@ -1,17 +1,13 @@
 import { HttpClient } from '@angular/common/http';
-import { Injectable, Signal, inject } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { map } from 'rxjs/operators';
 
-import { Talk } from '.';
-import {
-  ConferenceData,
-  Session,
-  Speaker,
-} from '../interfaces/conference.interfaces';
+import { Speaker, Talk } from '.';
+import { ConferenceData, Session } from '../interfaces/conference.interfaces';
 import { UserService } from './user.service';
 
-const SPEAKERS_DATA_PATH = 'assets/data/speakers.json';
+const SPEAKERS_DATA_PATH = 'assets/data/speakers-final.json';
 const TALKS_DATA_PATH = 'assets/data/talks-final.json';
 const CONFERENCE_DATA_PATH = 'assets/data/conference.json';
 @Injectable({
@@ -21,18 +17,13 @@ export class ConferenceService {
   http = inject(HttpClient);
   user = inject(UserService);
 
-  talks: Signal<Talk[]>;
+  talks = toSignal(this.load<Talk[]>(TALKS_DATA_PATH), {
+    initialValue: [],
+  });
 
-  speakers: Signal<Speaker[]>;
-
-  constructor() {
-    this.talks = toSignal(this.load<Talk[]>(TALKS_DATA_PATH), {
-      initialValue: [],
-    });
-    this.speakers = toSignal(this.load<Speaker[]>(SPEAKERS_DATA_PATH), {
-      initialValue: [],
-    });
-  }
+  speakers = toSignal(this.load<Speaker[]>(SPEAKERS_DATA_PATH), {
+    initialValue: [],
+  });
 
   load<T>(path: string) {
     return this.http.get<T>(path);

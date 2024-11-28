@@ -1,7 +1,8 @@
-import { Component, inject } from "@angular/core";
-import { RouterLink } from "@angular/router";
+import { Component, inject } from '@angular/core';
+import { RouterLink } from '@angular/router';
 import {
   IonAvatar,
+  IonButton,
   IonButtons,
   IonCard,
   IonCardContent,
@@ -10,21 +11,21 @@ import {
   IonContent,
   IonGrid,
   IonHeader,
+  IonIcon,
   IonItem,
   IonLabel,
-  IonList,
   IonMenuButton,
   IonRow,
   IonTitle,
   IonToolbar,
-} from "@ionic/angular/standalone";
-import { Speaker } from "../../interfaces/conference.interfaces";
-import { ConferenceService } from "../../providers/conference.service";
-
+} from '@ionic/angular/standalone';
+import { addIcons } from 'ionicons';
+import { globe, logoGithub, logoLinkedin, logoX } from 'ionicons/icons';
+import { ConferenceService } from '../../providers/conference.service';
 @Component({
-  selector: "page-speaker-list",
-  templateUrl: "speaker-list.html",
-  styleUrls: ["./speaker-list.scss"],
+  selector: 'page-speaker-list',
+  templateUrl: 'speaker-list.html',
+  styleUrls: ['./speaker-list.scss'],
   imports: [
     IonHeader,
     IonToolbar,
@@ -41,17 +42,21 @@ import { ConferenceService } from "../../providers/conference.service";
     IonAvatar,
     IonLabel,
     IonCardContent,
-    IonList,
     RouterLink,
+    IonButton,
+    IonIcon,
   ],
 })
 export class SpeakerListPage {
   private confData = inject(ConferenceService);
 
-  speakers: Speaker[] = [];
+  speakers = this.confData.getSpeakers();
 
-  ionViewDidEnter() {
-    const speakers = this.confData.getSpeakers();
-    this.speakers = speakers();
+  constructor() {
+    addIcons({ logoX, logoGithub, logoLinkedin, globe });
+  }
+
+  openExternalLink(url: string) {
+    window.open(url, '_blank');
   }
 }
