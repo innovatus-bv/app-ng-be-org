@@ -103,8 +103,19 @@ div.title {
 
 ion-avatar {
   flex-shrink: 0;
+  width: 100px;
+  height: 100px;
+
+  &.double {
+    width: 70px;
+    height: 70px;
+    img {
+      border-width: 4px;
+    }
+  }
+
   img {
-    border: double 4px transparent;
+    border: double 6px transparent;
     background-image: linear-gradient(white, white),
       conic-gradient(
         from -30deg,

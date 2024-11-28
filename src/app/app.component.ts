@@ -120,6 +120,7 @@ export class AppComponent implements OnInit {
     this.listenForLoginEvents();
 
     this.swUpdate.versionUpdates.subscribe(async (res) => {
+      console.log('res', res);
       const toast = await this.toastCtrl.create({
         message: 'Update available!',
         position: 'bottom',

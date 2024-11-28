@@ -37,7 +37,7 @@
           {{talk.location}}
         </ion-text>
       </div>
-      <ion-avatar>
+      <ion-avatar [class.double]="talk.speakers.length > 1">
         @for (speaker of talk.speakers; track speaker.id) {
         <img [src]="speaker.img" />
         }
