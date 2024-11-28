@@ -4,20 +4,20 @@
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
-    } @if(ios) {
+    <!-- } @if(ios) {
     <ion-segment
       [(ngModel)]="segment"
       (ionChange)="updateSchedule()">
       <ion-segment-button value="all"> All </ion-segment-button>
       <ion-segment-button value="favorites"> Favorites </ion-segment-button>
     </ion-segment>
-    } @if (!ios && !showSearchbar) {
+    } @if (!ios && !showSearchbar) { -->
     <ion-title>Schedule</ion-title>
     } @if (showSearchbar) {
     <ion-searchbar
       showCancelButton="always"
       [(ngModel)]="queryText"
-      (ionInput)="updateSchedule()"
+      (ionInput)="updateSchedule($any($event).detail.value)"
       (ionCancel)="showSearchbar = false"
       placeholder="Search"></ion-searchbar>
     }
@@ -28,7 +28,8 @@
           slot="icon-only"
           name="search"></ion-icon>
       </ion-button>
-      } @if (!showSearchbar) {
+      }
+      <!-- @if (!showSearchbar) {
       <ion-button (click)="presentFilter()">
         @if (ios) {
         <span>Filter</span>
@@ -40,10 +41,10 @@
         </span>
         }
       </ion-button>
-      }
+      } -->
     </ion-buttons>
   </ion-toolbar>
-  @if (!ios) {
+  <!-- @if (!ios) {
   <ion-toolbar>
     <ion-segment
       [(ngModel)]="segment"
@@ -52,7 +53,7 @@
       <ion-segment-button value="favorites"> Favorites </ion-segment-button>
     </ion-segment>
   </ion-toolbar>
-  }
+  } -->
 </ion-header>
 
 <ion-content fullscreen="true">
@@ -62,8 +63,7 @@
     </ion-toolbar>
     <ion-toolbar>
       <ion-searchbar
-        [(ngModel)]="queryText"
-        (ionInput)="updateSchedule()"
+        (ionInput)="updateSchedule($any($event).detail.value)"
         placeholder="Search"></ion-searchbar>
     </ion-toolbar>
   </ion-header>

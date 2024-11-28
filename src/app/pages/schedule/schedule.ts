@@ -1,4 +1,4 @@
-import { Component, computed, OnInit, ViewChild } from '@angular/core';
+import { Component, computed, OnInit, signal, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 
 import { addIcons } from 'ionicons';
@@ -30,8 +30,6 @@ import {
   IonMenuButton,
   IonRouterOutlet,
   IonSearchbar,
-  IonSegment,
-  IonSegmentButton,
   IonTitle,
   IonToolbar,
   LoadingController,
@@ -52,8 +50,6 @@ import { ScheduleFilterPage } from '../schedule-filter/schedule-filter';
     IonHeader,
     IonToolbar,
     IonButtons,
-    IonSegment,
-    IonSegmentButton,
     IonContent,
     IonTitle,
     IonSearchbar,
@@ -82,7 +78,7 @@ export class SchedulePage implements OnInit {
 
   ios: boolean;
   dayIndex = 0;
-  queryText = '';
+  queryText = signal('');
   segment = 'all';
   excludeTrackNames: string[] = [];
   shownSessions = computed(() => this.talks().length);
@@ -90,7 +86,12 @@ export class SchedulePage implements OnInit {
   confDate: string;
   showSearchbar: boolean;
 
-  talks = this.confService.getTalks();
+  talks = computed(() => {
+    const talks = this.confService.getTalks();
+    return talks().filter((talk) =>
+      talk.name.toLowerCase().includes(this.queryText().toLowerCase())
+    );
+  });
 
   constructor(
     public alertCtrl: AlertController,
@@ -115,17 +116,18 @@ export class SchedulePage implements OnInit {
   }
 
   ngOnInit() {
-    this.updateSchedule();
+    this.updateSchedule('');
 
     this.ios = this.config.get('mode') === 'ios';
   }
 
-  updateSchedule() {
+  updateSchedule(queryText: string) {
     // Close any open sliding items when the schedule updates
     if (this.scheduleList) {
       this.scheduleList.closeSlidingItems();
     }
 
+    this.queryText.set(queryText);
     // this.confService
     //   .getTimeline(
     //     this.dayIndex,
@@ -150,7 +152,7 @@ export class SchedulePage implements OnInit {
     const { data } = await modal.onWillDismiss();
     if (data) {
       this.excludeTrackNames = data;
-      this.updateSchedule();
+      this.updateSchedule('');
     }
   }
 
@@ -204,7 +206,7 @@ export class SchedulePage implements OnInit {
           handler: () => {
             // they want to remove this session from their favorites
             this.user.removeFavorite(sessionData.name);
-            this.updateSchedule();
+            this.updateSchedule('');
 
             // close the sliding item and hide the option buttons
             slidingItem.close();
