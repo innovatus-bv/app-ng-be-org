@@ -1,7 +1,10 @@
 <ion-header class="ion-no-border">
   <ion-toolbar>
     <ion-buttons slot="end">
-      <ion-button color="primary" (click)="startApp()" [hidden]="!showSkip"
+      <ion-button
+        color="primary"
+        (click)="startApp()"
+        [hidden]="!showSkip"
         >Skip</ion-button
       >
     </ion-buttons>
@@ -11,43 +14,67 @@
 <ion-content fullscreen="true">
   <div class="slide-container">
     <section class="slide">
-      <img src="assets/img/ica-slidebox-img-1.png" class="slide-image" />
+      <img
+        src="assets/icons/icon-384x384.png"
+        class="slide-image" />
       <h2 class="slide-title">
         Welcome to
-        <b>ICA</b>
+        <b>NGBE</b>
       </h2>
       <p>
-        The <b>ionic conference app</b> is a practical preview of the ionic
-        framework in action, and a demonstration of proper code use.
+        The <b>NGBE</b> is the annual conference for Angular developers in
+        Belgium.
       </p>
     </section>
 
     <section class="slide">
-      <img src="assets/img/ica-slidebox-img-2.png" class="slide-image" />
-      <h2 class="slide-title">What is Ionic?</h2>
+      <img
+        src="assets/img/tutorial/code-of-conduct.jpg"
+        class="slide-image" />
+      <h2 class="slide-title">Code of Conduct</h2>
       <p>
-        <b>Ionic Framework</b> is an open source SDK that enables developers to
-        build high quality mobile apps with web technologies like HTML, CSS, and
-        JavaScript.
+        NG-BE is a friendly conference where everyone should feel welcome and
+        safe. Please be respectful towards all attendees, speakers, and staff
+        both in person and online.
+        <br />
+        <a
+          href="https://ngbe.be/code-of-conduct"
+          target="_blank"
+          >Read more</a
+        >
       </p>
     </section>
 
     <section class="slide">
-      <img src="assets/img/ica-slidebox-img-3.png" class="slide-image" />
-      <h2 class="slide-title">What is Ionic Appflow?</h2>
+      <img
+        src="assets/img/tutorial/photo-contest.jpg"
+        class="slide-image" />
+      <h2 class="slide-title">Photo Contest</h2>
       <p>
-        <b>Ionic Appflow</b> is a powerful set of services and features built on
-        top of Ionic Framework that brings a totally new level of app
-        development agility to mobile dev teams.
+        Take a photo of yourself at the conference or use our photo booth. Post
+        it on social media with the hashtag #ngbe #photo. The best photo will
+        win a prize!
+        <br />
+        <a
+          href="https://ngbe.be/rules-photo-contest"
+          target="_blank"
+          >Read more</a
+        >
       </p>
     </section>
 
     <section class="slide">
-      <img src="assets/img/ica-slidebox-img-4.png" class="slide-image" />
-      <h2 class="slide-title">Ready to Play?</h2>
-      <ion-button fill="clear" (click)="startApp()">
+      <img
+        src="assets/img/ica-slidebox-img-4.png"
+        class="slide-image" />
+      <h2 class="slide-title">Ready to Start?</h2>
+      <ion-button
+        fill="clear"
+        (click)="startApp()">
         Continue
-        <ion-icon slot="end" name="arrow-forward"></ion-icon>
+        <ion-icon
+          slot="end"
+          name="arrow-forward"></ion-icon>
       </ion-button>
     </section>
   </div>
