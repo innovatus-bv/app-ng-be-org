@@ -226,18 +226,6 @@
     "extractedFrom": ""
   },
   {
-    "name": "Sponsor Session - Gold 4",
-    "description": [],
-    "speakers": [],
-    "keyTakeaways": [],
-    "timeStart": "2:15 PM",
-    "timeEnd": "2:20 PM",
-    "tracks": [],
-    "type": "sponsor",
-    "id": -7,
-    "extractedFrom": ""
-  },
-  {
     "name": "SPAs, full-stack, micro-frontends, enterprise migrations, what the quack?",
     "description": [
       "Most of us have built an Angular SPA, some of us operate big ones in the enterprise. As SPAs in enterprise grow, they become mission critical, but also slow and fragile. This is not a great combo. Can we do better?",
