@@ -28,13 +28,16 @@ import {
 } from '@ionic/angular/standalone';
 import {
   calendarOutline,
+  camera,
   hammer,
   help,
   informationCircleOutline,
   logIn,
+  logoAngular,
   logOut,
   mapOutline,
   moonOutline,
+  newspaper,
   peopleOutline,
   person,
   personAdd,
@@ -113,6 +116,9 @@ export class AppComponent implements OnInit {
       personAdd,
       moonOutline,
       hammer,
+      camera,
+      logoAngular,
+      newspaper,
     });
   }
 

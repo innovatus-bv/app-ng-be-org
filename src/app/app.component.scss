@@ -21,6 +21,11 @@ ion-item.selected {
 */
 ion-menu.md ion-list {
   padding: 20px 0;
+
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
 }
 
 ion-menu.md ion-list-header {
