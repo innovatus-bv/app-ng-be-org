@@ -8,7 +8,7 @@ ion-content {
 
 .slide-container {
   display: grid;
-  grid-template-columns: repeat(4, 100%);
+  grid-template-columns: repeat(5, 100%);
   grid-template-rows: 1fr;
 
   height: 100%;
@@ -40,7 +40,7 @@ ion-content {
   max-width: 80%;
   max-height: 50%;
 
-  margin: -5vh 0 0;
+  margin: -5vh 0 8px 0;
   pointer-events: none;
 }
 
