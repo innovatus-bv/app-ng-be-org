@@ -39,4 +39,8 @@ export const routes: Routes = [
       import('./pages/tutorial/tutorial').then((m) => m.TutorialPage),
     canMatch: [checkTutorialGuard],
   },
+  {
+    path: '**',
+    redirectTo: '/app/tabs/schedule',
+  },
 ];
